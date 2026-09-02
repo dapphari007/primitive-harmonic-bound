@@ -1,0 +1,9 @@
+<h3>4.5 Where the constant-weight certificate starts to win</h3>
+<p>At \(\delta=1/10\) the asymptotic gain is only \(1.8\times10^{-4}\) bits per symbol, so the finite-length crossover must be far out. We optimized the Bassalygo–Elias-transferred bound over the layer weight \(w\), the retained degree \(L\), and (for the new certificate) the harmonic degrees \((p,q)\), at block lengths from 2,000 to 50,000. Up to \(n=10{,}000\) the optimizer keeps \(p=q=0\): the classical certificate is still the best member of the family. The first strict win is at \(n=20{,}000\) (\(p=2\), \(q=0\), gain 0.95 bits), and at \(n=50{,}000\) the gain is 5.7 bits with \(p=7\). The optimal complement degree \(q\) stays zero at these lengths, in line with \(\gamma^*\approx10^{-5}\). For comparison, the whole-cube certificate at the same distance already wins at \(n=30\), but its exponent there is the worse one. The message for practitioners is blunt: below a few thousand bits the constant-weight improvement is invisible, and the classical Hahn certificate is exactly what one gets.</p>
+<div class="tbl"><table>
+<tr><th>n (δ = 1/10)</th><th>classical rate</th><th>new rate</th><th>(w, p, q, L)</th><th>gain (bits)</th></tr>
+<tr><td>2,000</td><td>0.707951</td><td>0.707951</td><td>(113, 0, 0, 3)</td><td>0.000</td></tr>
+<tr><td>10,000</td><td>0.698239</td><td>0.698239</td><td>(615, 0, 0, 31)</td><td>0.000</td></tr>
+<tr><td>20,000</td><td>0.696229</td><td>0.696182</td><td>(1247, 2, 0, 69)</td><td class="win">+0.948</td></tr>
+<tr><td>50,000</td><td>0.694640</td><td>0.694526</td><td>(3200, 7, 0, 207)</td><td class="win">+5.705</td></tr>
+</table></div>

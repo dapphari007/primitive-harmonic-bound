@@ -1,0 +1,9 @@
+delta=0.1: asymptotic CW optimum alpha*=0.0649 beta*=1.70e-04 gamma*=1.18e-05 u*=0.0044, kappa_CW=0.692557
+n=   2000 d=   200 | classical: log2=   1415.902 rate=0.707951 w=113 | new: log2=   1415.902 rate=0.707951 w=113 (p,q,L)=(0, 0, 3) | gain=+0.000 bits   [0s]
+n=   5000 d=   500 | classical: log2=   3506.896 rate=0.701379 w=306 | new: log2=   3506.896 rate=0.701379 w=306 (p,q,L)=(0, 0, 16) | gain=+0.000 bits   [1s]
+n=  10000 d=  1000 | classical: log2=   6982.385 rate=0.698239 w=615 | new: log2=   6982.385 rate=0.698239 w=615 (p,q,L)=(0, 0, 31) | gain=+0.000 bits   [6s]
+n=  20000 d=  2000 | classical: log2=  13924.589 rate=0.696229 w=1237 | new: log2=  13923.642 rate=0.696182 w=1247 (p,q,L)=(2, 0, 69) | gain=+0.948 bits   [19s]
+n=  50000 d=  5000 | classical: log2=  34732.008 rate=0.694640 w=3167 | new: log2=  34726.302 rate=0.694526 w=3200 (p,q,L)=(7, 0, 207) | gain=+5.705 bits   [132s]
+n= 100000 d= 10000 | classical: log2=  69392.943 rate=0.693929 w=6313 | new: log2=  69379.779 rate=0.693798 w=6424 (p,q,L)=(17, 1, 424) | gain=+13.164 bits   [431s]
+n= 200000 d= 20000 | classical: log2= 138697.263 rate=0.693486 w=12649 | new: log2= 138666.620 rate=0.693333 w=12902 (p,q,L)=(33, 2, 864) | gain=+30.643 bits   [1867s]
+n= 400000 d= 40000 | classical: log2= 277283.415 rate=0.693209 w=25377 | new: log2= 277216.938 rate=0.693042 w=25857 (p,q,L)=(67, 4, 1743) | gain=+66.477 bits   [8257s]

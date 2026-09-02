@@ -1,0 +1,7 @@
+delta = 0.3
+n=   100 d=   30 | one-row (23):      41.026 rate=0.410259 (k,L)=(0, 7) | two-row:      41.042 rate=0.410420 box=(1, 1, 7, 2, 1) Lambda=0.40458 | gain=-0.016 bits   [3s]
+n=   200 d=   60 | one-row (23):      71.285 rate=0.356427 (k,L)=(1, 15) | two-row:      71.287 rate=0.356437 box=(2, 2, 13, 2, 0) Lambda=0.41745 | gain=-0.002 bits   [11s]
+n=   500 d=  150 | one-row (23):     153.824 rate=0.307649 (k,L)=(1, 29) | two-row:     154.372 rate=0.308744 box=(1, 1, 27, 2, 2) Lambda=0.40721 | gain=-0.547 bits   [23s]
+n=  1000 d=  300 | one-row (23):     286.187 rate=0.286187 (k,L)=(1, 51) | two-row:     286.722 rate=0.286722 box=(1, 9, 49, 2, 3) Lambda=0.40153 | gain=-0.534 bits   [40s]
+n=  2000 d=  600 | one-row (23):     545.096 rate=0.272548 (k,L)=(2, 97) | two-row:     546.646 rate=0.273323 box=(2, 2, 96, 0, 1) Lambda=0.40066 | gain=-1.550 bits   [69s]
+n=  5000 d= 1500 | one-row (23):    1307.353 rate=0.261471 (k,L)=(9, 241) | two-row:    1309.732 rate=0.261946 box=(11, 11, 244, 0, 1) Lambda=0.40042 | gain=-2.379 bits   [152s]

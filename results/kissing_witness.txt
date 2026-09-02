@@ -1,0 +1,7 @@
+Certified level-1 witness for the kissing-number exponent (paper Theorem 1.2 with r = 1, s = 1/2), 30-digit arithmetic:
+  a = (0.09005196, 0.000368267)   b = (0.006476675)      strictly interlacing a1 > b1 > a2 > 0
+  residues R = (0.93710976, 0.062890239) > 0, sum = 1
+  2*Gamma_1(a,b) = 0.500000993016909  > 1/2   (margin 9.93e-7)
+  Phi_1(a,b)     = 0.396627695316
+  =>  limsup (1/n) log2 tau_n  <=  0.3966277        (Kabatianskii-Levenshtein 1978: 0.400944 cap-optimised, 0.401414 whole sphere)
+Reproduce: python - (see experiments/sph_kissing.py and the mpmath snippet in the research note, Section 5.4)

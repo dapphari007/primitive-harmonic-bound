@@ -1,0 +1,168 @@
+
+=== n=8 k=1 L=7:  lambda(2.1) = 0.569289
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.569289   lambda* >= lambda(2.1): True   K(0)=7.0000 (m_k=7)
+      d=2  s=+0.500  (2.3)=   261.843   Delsarte f(0)/f0=   256.995   LP=   128.000
+      d=3  s=+0.250  (2.3)=    85.234   Delsarte f(0)/f0=    83.656   LP=    25.600
+      d=4  s=+0.000  (2.3)=    63.739   Delsarte f(0)/f0=    62.559   LP=    16.000
+      d=5  s=-0.250  (2.3)=    55.362   Delsarte f(0)/f0=    54.337   LP=     4.000
+      d=6  s=-0.500  (2.3)=    50.902   Delsarte f(0)/f0=    49.959   LP=     3.000
+      d=7  s=-0.750  (2.3)=    48.132   Delsarte f(0)/f0=    47.241   LP=     2.286
+      d=8  s=-1.000  (2.3)=    46.245   Delsarte f(0)/f0=    45.389   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.565411   lambda* >= lambda(2.1): False   K(0)=7.0000 (m_k=7)
+  a_j^2 = v_j / sum                    lambda* = 0.541269   lambda* >= lambda(2.1): False   K(0)=7.0000 (m_k=7)
+
+=== n=8 k=1 L=4:  lambda(2.1) = 0.467791
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.467791   lambda* >= lambda(2.1): True   K(0)=7.0000 (m_k=7)
+      d=3  s=+0.250  (2.3)=    79.696   Delsarte f(0)/f0=    75.888   LP=    25.600
+      d=4  s=+0.000  (2.3)=    49.473   Delsarte f(0)/f0=    47.109   LP=    16.000
+      d=5  s=-0.250  (2.3)=    40.302   Delsarte f(0)/f0=    38.376   LP=     4.000
+      d=6  s=-0.500  (2.3)=    35.870   Delsarte f(0)/f0=    34.156   LP=     3.000
+      d=7  s=-0.750  (2.3)=    33.257   Delsarte f(0)/f0=    31.668   LP=     2.286
+      d=8  s=-1.000  (2.3)=    31.534   Delsarte f(0)/f0=    30.027   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.450212   lambda* >= lambda(2.1): False   K(0)=7.0000 (m_k=7)
+  a_j^2 = v_j / sum                    lambda* = 0.432381   lambda* >= lambda(2.1): False   K(0)=7.0000 (m_k=7)
+
+=== n=8 k=2 L=6:  lambda(2.1) = 0.264837
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.264837   lambda* >= lambda(2.1): True   K(0)=20.0000 (m_k=20)
+      d=3  s=+0.250  (2.3)=   601.517   Delsarte f(0)/f0=   579.024   LP=    25.600
+      d=4  s=+0.000  (2.3)=    44.933   Delsarte f(0)/f0=    43.253   LP=    16.000
+      d=5  s=-0.250  (2.3)=    28.893   Delsarte f(0)/f0=    27.812   LP=     4.000
+      d=6  s=-0.500  (2.3)=    23.338   Delsarte f(0)/f0=    22.466   LP=     3.000
+      d=7  s=-0.750  (2.3)=    20.521   Delsarte f(0)/f0=    19.753   LP=     2.286
+      d=8  s=-1.000  (2.3)=    18.817   Delsarte f(0)/f0=    18.113   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.259642   lambda* >= lambda(2.1): False   K(0)=20.0000 (m_k=20)
+  a_j^2 = v_j / sum                    lambda* = 0.259260   lambda* >= lambda(2.1): False   K(0)=20.0000 (m_k=20)
+
+=== n=10 k=1 L=9:  lambda(2.1) = 0.643585
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.643585   lambda* >= lambda(2.1): True   K(0)=9.0000 (m_k=9)
+      d=2  s=+0.600  (2.3)=  1042.158   Delsarte f(0)/f0=  1026.201   LP=   512.000
+      d=3  s=+0.400  (2.3)=   279.711   Delsarte f(0)/f0=   275.428   LP=    85.333
+      d=4  s=+0.200  (2.3)=   204.796   Delsarte f(0)/f0=   201.660   LP=    42.667
+      d=5  s=+0.000  (2.3)=   176.442   Delsarte f(0)/f0=   173.741   LP=    12.000
+      d=6  s=-0.200  (2.3)=   161.533   Delsarte f(0)/f0=   159.060   LP=     6.000
+      d=7  s=-0.400  (2.3)=   152.338   Delsarte f(0)/f0=   150.006   LP=     3.200
+      d=8  s=-0.600  (2.3)=   146.101   Delsarte f(0)/f0=   143.864   LP=     2.667
+      d=9  s=-0.800  (2.3)=   141.592   Delsarte f(0)/f0=   139.424   LP=     2.222
+      d=10 s=-1.000  (2.3)=   138.180   Delsarte f(0)/f0=   136.065   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.640833   lambda* >= lambda(2.1): False   K(0)=9.0000 (m_k=9)
+  a_j^2 = v_j / sum                    lambda* = 0.608544   lambda* >= lambda(2.1): False   K(0)=9.0000 (m_k=9)
+
+=== n=10 k=1 L=5:  lambda(2.1) = 0.548256
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.548256   lambda* >= lambda(2.1): True   K(0)=9.0000 (m_k=9)
+      d=3  s=+0.400  (2.3)=   286.441   Delsarte f(0)/f0=   267.233   LP=    85.333
+      d=4  s=+0.200  (2.3)=   162.588   Delsarte f(0)/f0=   151.685   LP=    42.667
+      d=5  s=+0.000  (2.3)=   129.096   Delsarte f(0)/f0=   120.439   LP=    12.000
+      d=6  s=-0.200  (2.3)=   113.508   Delsarte f(0)/f0=   105.897   LP=     6.000
+      d=7  s=-0.400  (2.3)=   104.496   Delsarte f(0)/f0=    97.489   LP=     3.200
+      d=8  s=-0.600  (2.3)=    98.623   Delsarte f(0)/f0=    92.010   LP=     2.667
+      d=9  s=-0.800  (2.3)=    94.492   Delsarte f(0)/f0=    88.156   LP=     2.222
+      d=10 s=-1.000  (2.3)=    91.429   Delsarte f(0)/f0=    85.298   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.529674   lambda* >= lambda(2.1): False   K(0)=9.0000 (m_k=9)
+  a_j^2 = v_j / sum                    lambda* = 0.498981   lambda* >= lambda(2.1): False   K(0)=9.0000 (m_k=9)
+
+=== n=10 k=2 L=8:  lambda(2.1) = 0.368967
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.368967   lambda* >= lambda(2.1): True   K(0)=35.0000 (m_k=35)
+      d=4  s=+0.200  (2.3)=   135.546   Delsarte f(0)/f0=   129.539   LP=    42.667
+      d=5  s=+0.000  (2.3)=    77.591   Delsarte f(0)/f0=    74.152   LP=    12.000
+      d=6  s=-0.200  (2.3)=    60.380   Delsarte f(0)/f0=    57.704   LP=     6.000
+      d=7  s=-0.400  (2.3)=    52.122   Delsarte f(0)/f0=    49.812   LP=     3.200
+      d=8  s=-0.600  (2.3)=    47.273   Delsarte f(0)/f0=    45.178   LP=     2.667
+      d=9  s=-0.800  (2.3)=    44.083   Delsarte f(0)/f0=    42.129   LP=     2.222
+      d=10 s=-1.000  (2.3)=    41.825   Delsarte f(0)/f0=    39.971   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.364198   lambda* >= lambda(2.1): False   K(0)=35.0000 (m_k=35)
+  a_j^2 = v_j / sum                    lambda* = 0.359231   lambda* >= lambda(2.1): False   K(0)=35.0000 (m_k=35)
+
+=== n=10 k=3 L=7:  lambda(2.1) = 0.172378
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.172378   lambda* >= lambda(2.1): True   K(0)=75.0000 (m_k=75)
+      d=5  s=+0.000  (2.3)=    70.543   Delsarte f(0)/f0=    66.782   LP=    12.000
+      d=6  s=-0.200  (2.3)=    39.186   Delsarte f(0)/f0=    37.097   LP=     6.000
+      d=7  s=-0.400  (2.3)=    29.743   Delsarte f(0)/f0=    28.157   LP=     3.200
+      d=8  s=-0.600  (2.3)=    25.190   Delsarte f(0)/f0=    23.847   LP=     2.667
+      d=9  s=-0.800  (2.3)=    22.510   Delsarte f(0)/f0=    21.310   LP=     2.222
+      d=10 s=-1.000  (2.3)=    20.744   Delsarte f(0)/f0=    19.638   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.168001   lambda* >= lambda(2.1): False   K(0)=75.0000 (m_k=75)
+  a_j^2 = v_j / sum                    lambda* = 0.170133   lambda* >= lambda(2.1): False   K(0)=75.0000 (m_k=75)
+
+=== n=12 k=1 L=11:  lambda(2.1) = 0.696559
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.696559   lambda* >= lambda(2.1): True   K(0)=11.0000 (m_k=11)
+      d=2  s=+0.667  (2.3)=  4150.268   Delsarte f(0)/f0=  4101.141   LP=  2048.000
+      d=3  s=+0.500  (2.3)=   946.744   Delsarte f(0)/f0=   935.537   LP=   292.571
+      d=4  s=+0.333  (2.3)=   683.105   Delsarte f(0)/f0=   675.019   LP=   170.667
+      d=5  s=+0.167  (2.3)=   585.311   Delsarte f(0)/f0=   578.382   LP=    40.000
+      d=6  s=+0.000  (2.3)=   534.315   Delsarte f(0)/f0=   527.990   LP=    24.000
+      d=7  s=-0.167  (2.3)=   503.011   Delsarte f(0)/f0=   497.057   LP=     5.333
+      d=8  s=-0.333  (2.3)=   481.839   Delsarte f(0)/f0=   476.136   LP=     4.000
+      d=9  s=-0.500  (2.3)=   466.565   Delsarte f(0)/f0=   461.042   LP=     2.857
+      d=10 s=-0.667  (2.3)=   455.026   Delsarte f(0)/f0=   449.640   LP=     2.500
+      d=11 s=-0.833  (2.3)=   446.001   Delsarte f(0)/f0=   440.722   LP=     2.182
+      d=12 s=-1.000  (2.3)=   438.749   Delsarte f(0)/f0=   433.556   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.694608   lambda* >= lambda(2.1): False   K(0)=11.0000 (m_k=11)
+  a_j^2 = v_j / sum                    lambda* = 0.656152   lambda* >= lambda(2.1): False   K(0)=11.0000 (m_k=11)
+
+=== n=12 k=2 L=10:  lambda(2.1) = 0.450218
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.450218   lambda* >= lambda(2.1): True   K(0)=54.0000 (m_k=54)
+      d=4  s=+0.333  (2.3)=   429.884   Delsarte f(0)/f0=   412.936   LP=   170.667
+      d=5  s=+0.167  (2.3)=   221.507   Delsarte f(0)/f0=   212.774   LP=    40.000
+      d=6  s=+0.000  (2.3)=   167.409   Delsarte f(0)/f0=   160.809   LP=    24.000
+      d=7  s=-0.167  (2.3)=   142.542   Delsarte f(0)/f0=   136.923   LP=     5.333
+      d=8  s=-0.333  (2.3)=   128.254   Delsarte f(0)/f0=   123.198   LP=     4.000
+      d=9  s=-0.500  (2.3)=   118.979   Delsarte f(0)/f0=   114.288   LP=     2.857
+      d=10 s=-0.667  (2.3)=   112.471   Delsarte f(0)/f0=   108.037   LP=     2.500
+      d=11 s=-0.833  (2.3)=   107.654   Delsarte f(0)/f0=   103.410   LP=     2.182
+      d=12 s=-1.000  (2.3)=   103.943   Delsarte f(0)/f0=    99.846   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.446329   lambda* >= lambda(2.1): False   K(0)=54.0000 (m_k=54)
+  a_j^2 = v_j / sum                    lambda* = 0.436782   lambda* >= lambda(2.1): False   K(0)=54.0000 (m_k=54)
+
+=== n=12 k=3 L=9:  lambda(2.1) = 0.258821
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.258821   lambda* >= lambda(2.1): True   K(0)=154.0000 (m_k=154)
+      d=5  s=+0.167  (2.3)=   231.238   Delsarte f(0)/f0=   215.700   LP=    40.000
+      d=6  s=+0.000  (2.3)=    98.800   Delsarte f(0)/f0=    92.161   LP=    24.000
+      d=7  s=-0.167  (2.3)=    70.116   Delsarte f(0)/f0=    65.404   LP=     5.333
+      d=8  s=-0.333  (2.3)=    57.578   Delsarte f(0)/f0=    53.709   LP=     4.000
+      d=9  s=-0.500  (2.3)=    50.548   Delsarte f(0)/f0=    47.152   LP=     2.857
+      d=10 s=-0.667  (2.3)=    46.050   Delsarte f(0)/f0=    42.956   LP=     2.500
+      d=11 s=-0.833  (2.3)=    42.925   Delsarte f(0)/f0=    40.041   LP=     2.182
+      d=12 s=-1.000  (2.3)=    40.628   Delsarte f(0)/f0=    37.898   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.254346   lambda* >= lambda(2.1): False   K(0)=154.0000 (m_k=154)
+  a_j^2 = v_j / sum                    lambda* = 0.254490   lambda* >= lambda(2.1): False   K(0)=154.0000 (m_k=154)
+
+=== n=12 k=1 L=6:  lambda(2.1) = 0.608505
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.608505   lambda* >= lambda(2.1): True   K(0)=11.0000 (m_k=11)
+      d=3  s=+0.500  (2.3)=  1051.063   Delsarte f(0)/f0=   962.107   LP=   292.571
+      d=4  s=+0.333  (2.3)=   552.603   Delsarte f(0)/f0=   505.834   LP=   170.667
+      d=5  s=+0.167  (2.3)=   430.193   Delsarte f(0)/f0=   393.784   LP=    40.000
+      d=6  s=+0.000  (2.3)=   374.838   Delsarte f(0)/f0=   343.114   LP=    24.000
+      d=7  s=-0.167  (2.3)=   343.287   Delsarte f(0)/f0=   314.233   LP=     5.333
+      d=8  s=-0.333  (2.3)=   322.902   Delsarte f(0)/f0=   295.573   LP=     4.000
+      d=9  s=-0.500  (2.3)=   308.647   Delsarte f(0)/f0=   282.525   LP=     2.857
+      d=10 s=-0.667  (2.3)=   298.118   Delsarte f(0)/f0=   272.887   LP=     2.500
+      d=11 s=-0.833  (2.3)=   290.023   Delsarte f(0)/f0=   265.477   LP=     2.182
+      d=12 s=-1.000  (2.3)=   283.606   Delsarte f(0)/f0=   259.603   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.590144   lambda* >= lambda(2.1): False   K(0)=11.0000 (m_k=11)
+  a_j^2 = v_j / sum                    lambda* = 0.547400   lambda* >= lambda(2.1): False   K(0)=11.0000 (m_k=11)
+
+=== n=8 k=0 L=3:  lambda(2.1) = 0.750000
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.750000   lambda* >= lambda(2.1): True   K(0)=1.0000 (m_k=1)
+      d=2  s=+0.500  (2.3)=   186.000   Delsarte f(0)/f0=   153.125   LP=   128.000
+      d=3  s=+0.250  (2.3)=   139.500   Delsarte f(0)/f0=   114.844   LP=    25.600
+      d=4  s=+0.000  (2.3)=   124.000   Delsarte f(0)/f0=   102.083   LP=    16.000
+      d=5  s=-0.250  (2.3)=   116.250   Delsarte f(0)/f0=    95.703   LP=     4.000
+      d=6  s=-0.500  (2.3)=   111.600   Delsarte f(0)/f0=    91.875   LP=     3.000
+      d=7  s=-0.750  (2.3)=   108.500   Delsarte f(0)/f0=    89.323   LP=     2.286
+      d=8  s=-1.000  (2.3)=   106.286   Delsarte f(0)/f0=    87.500   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.681818   lambda* >= lambda(2.1): False   K(0)=1.0000 (m_k=1)
+  a_j^2 = v_j / sum                    lambda* = 0.540636   lambda* >= lambda(2.1): False   K(0)=1.0000 (m_k=1)
+
+=== n=10 k=0 L=4:  lambda(2.1) = 0.800000
+  paper: a_j^2 = sqrt(N_j) v_j / sum   lambda* = 0.800000   lambda* >= lambda(2.1): True   K(0)=1.0000 (m_k=1)
+      d=2  s=+0.600  (2.3)=   772.000   Delsarte f(0)/f0=   620.156   LP=   512.000
+      d=3  s=+0.400  (2.3)=   579.000   Delsarte f(0)/f0=   465.117   LP=    85.333
+      d=4  s=+0.200  (2.3)=   514.667   Delsarte f(0)/f0=   413.437   LP=    42.667
+      d=5  s=+0.000  (2.3)=   482.500   Delsarte f(0)/f0=   387.598   LP=    12.000
+      d=6  s=-0.200  (2.3)=   463.200   Delsarte f(0)/f0=   372.094   LP=     6.000
+      d=7  s=-0.400  (2.3)=   450.333   Delsarte f(0)/f0=   361.758   LP=     3.200
+      d=8  s=-0.600  (2.3)=   441.143   Delsarte f(0)/f0=   354.375   LP=     2.667
+      d=9  s=-0.800  (2.3)=   434.250   Delsarte f(0)/f0=   348.838   LP=     2.222
+      d=10 s=-1.000  (2.3)=   428.889   Delsarte f(0)/f0=   344.531   LP=     2.000
+  a_j = v_j (Perron vector)            lambda* = 0.742857   lambda* >= lambda(2.1): False   K(0)=1.0000 (m_k=1)
+  a_j^2 = v_j / sum                    lambda* = 0.560488   lambda* >= lambda(2.1): False   K(0)=1.0000 (m_k=1)

@@ -1,0 +1,63 @@
+
+##### n=10 w=4 (|X_w|=210, built in 0.0s)
+  (p,q)=(0,0) degrees 0..4: max|b_meas-b(37)| = 6.94e-16, max|c_meas-c(37)| = 2.78e-16
+      L=2: lambda_max(Jhat)=0.583333  lambda*=0.583333  OK 
+         d=2: (46)=168884986026394080.00 Dels=inf LP=210.00 | d=4: (46)=90.00 Dels=72.00 LP=30.00 | d=6: (46)=67.50 Dels=54.00 LP=5.00 | d=8: (46)=60.00 Dels=48.00 LP=2.50
+      L=4: lambda_max(Jhat)=1.000000  lambda*=1.000000  OK 
+         d=2: (46)=210.00 Dels=210.00 LP=210.00 | d=4: (46)=210.00 Dels=210.00 LP=30.00 | d=6: (46)=210.00 Dels=210.00 LP=5.00 | d=8: (46)=210.00 Dels=210.00 LP=2.50
+  (p,q)=(1,0) degrees 1..3: max|b_meas-b(37)| = 3.05e-16, max|c_meas-c(37)| = 2.22e-16
+      L=2: lambda_max(Jhat)=0.397901  lambda*=0.397901  OK 
+         d=4: (46)=52.86 Dels=51.23 LP=30.00 | d=6: (46)=28.30 Dels=27.43 LP=5.00 | d=8: (46)=22.96 Dels=22.26 LP=2.50
+      L=3: lambda_max(Jhat)=0.659751  lambda*=0.659751  OK 
+         d=2: (46)=216.28 Dels=211.42 LP=210.00 | d=4: (46)=67.04 Dels=65.53 LP=30.00 | d=6: (46)=54.50 Dels=53.28 LP=5.00 | d=8: (46)=49.84 Dels=48.72 LP=2.50
+  (p,q)=(0,1) degrees 1..4: max|b_meas-b(37)| = 3.54e-16, max|c_meas-c(37)| = 2.22e-16
+      L=2: lambda_max(Jhat)=0.268662  lambda*=0.268662  OK 
+         d=4: (46)=71.90 Dels=61.93 LP=30.00 | d=6: (46)=21.21 Dels=18.27 LP=5.00 | d=8: (46)=15.68 Dels=13.51 LP=2.50
+      L=3: lambda_max(Jhat)=0.419379  lambda*=0.419379  OK 
+         d=4: (46)=78.48 Dels=70.19 LP=30.00 | d=6: (46)=44.44 Dels=39.75 LP=5.00 | d=8: (46)=36.52 Dels=32.66 LP=2.50
+      L=4: lambda_max(Jhat)=0.550037  lambda*=0.550037  OK 
+         d=4: (46)=90.86 Dels=86.93 LP=30.00 | d=6: (46)=65.31 Dels=62.48 LP=5.00 | d=8: (46)=57.26 Dels=54.78 LP=2.50
+  (p,q)=(1,1) degrees 2..4: max|b_meas-b(37)| = 2.22e-16, max|c_meas-c(37)| = 1.94e-16
+      L=3: lambda_max(Jhat)=0.162965  lambda*=0.162965  OK 
+         d=6: (46)=22.20 Dels=21.98 LP=5.00 | d=8: (46)=14.73 Dels=14.59 LP=2.50
+      L=4: lambda_max(Jhat)=0.356657  lambda*=0.356657  OK 
+         d=4: (46)=58.48 Dels=54.40 LP=30.00 | d=6: (46)=27.47 Dels=25.56 LP=5.00 | d=8: (46)=21.72 Dels=20.20 LP=2.50
+  (p,q)=(2,0): j_- = 2 >= j_+ = 2, no admissible degrees
+  (p,q)=(0,2) degrees 2..4: max|b_meas-b(37)| = 1.11e-16, max|c_meas-c(37)| = 5.55e-17
+      L=3: lambda_max(Jhat)=0.323076  lambda*=0.323076  OK 
+         d=4: (46)=65.12 Dels=62.80 LP=30.00 | d=6: (46)=26.66 Dels=25.71 LP=5.00 | d=8: (46)=20.58 Dels=19.85 LP=2.50
+      L=4: lambda_max(Jhat)=0.485284  lambda*=0.485284  OK 
+         d=4: (46)=58.12 Dels=55.72 LP=30.00 | d=6: (46)=37.78 Dels=36.21 LP=5.00 | d=8: (46)=32.15 Dels=30.82 LP=2.50
+  (p,q)=(2,1): j_- = 3 >= j_+ = 3, no admissible degrees
+  (p,q)=(1,2) degrees 3..4: max|b_meas-b(37)| = 6.94e-17, max|c_meas-c(37)| = 8.33e-17
+      L=4: lambda_max(Jhat)=0.101860  lambda*=0.101860  OK 
+         d=6: (46)=21.71 Dels=21.62 LP=5.00 | d=8: (46)=13.25 Dels=13.20 LP=2.50
+  (p,q)=(2,2): j_- = 4 >= j_+ = 4, no admissible degrees
+  (p,q)=(0,3): j_- = 3 >= j_+ = 3, no admissible degrees
+  (p,q)=(1,3): j_- = 4 >= j_+ = 4, no admissible degrees
+
+##### n=12 w=5 (|X_w|=792, built in 0.8s)
+  (p,q)=(0,0) degrees 0..5: max|b_meas-b(37)| = 1.33e-15, max|c_meas-c(37)| = 6.66e-16
+      L=2: lambda_max(Jhat)=0.521099  lambda*=0.521099  OK 
+         d=4: (46)=218.83 Dels=163.38 LP=99.00 | d=6: (46)=123.50 Dels=92.21 LP=15.84 | d=8: (46)=101.41 Dels=75.72 LP=3.69 | d=10: (46)=91.59 Dels=68.38 LP=2.40
+      L=5: lambda_max(Jhat)=1.000000  lambda*=1.000000  OK 
+         d=2: (46)=792.00 Dels=792.00 LP=792.00 | d=4: (46)=792.00 Dels=792.00 LP=99.00 | d=6: (46)=792.00 Dels=792.00 LP=15.84 | d=8: (46)=792.00 Dels=792.00 LP=3.69 | d=10: (46)=792.00 Dels=792.00 LP=2.40
+  (p,q)=(1,1) degrees 2..5: max|b_meas-b(37)| = 5.00e-16, max|c_meas-c(37)| = 2.22e-16
+      L=3: lambda_max(Jhat)=0.143358  lambda*=0.143358  OK 
+         d=6: (46)=51.85 Dels=49.53 LP=15.84 | d=8: (46)=23.09 Dels=22.06 LP=3.69 | d=10: (46)=17.32 Dels=16.55 LP=2.40
+      L=4: lambda_max(Jhat)=0.276325  lambda*=0.276325  OK 
+         d=6: (46)=67.89 Dels=66.43 LP=15.84 | d=8: (46)=42.61 Dels=41.69 LP=3.69 | d=10: (46)=34.83 Dels=34.08 LP=2.40
+      L=5: lambda_max(Jhat)=0.442547  lambda*=0.442547  OK 
+         d=4: (46)=173.75 Dels=162.04 LP=99.00 | d=6: (46)=70.96 Dels=66.17 LP=15.84 | d=8: (46)=54.76 Dels=51.07 LP=3.69 | d=10: (46)=48.16 Dels=44.91 LP=2.40
+  (p,q)=(2,1) degrees 3..4: max|b_meas-b(37)| = 8.33e-17, max|c_meas-c(37)| = 2.78e-17
+      L=4: lambda_max(Jhat)=0.252435  lambda*=0.252435  OK 
+         d=6: (46)=52.34 Dels=47.79 LP=15.84 | d=8: (46)=31.44 Dels=28.70 LP=3.69 | d=10: (46)=25.36 Dels=23.15 LP=2.40
+  (p,q)=(1,2) degrees 3..5: max|b_meas-b(37)| = 1.21e-16, max|c_meas-c(37)| = 5.55e-17
+      L=4: lambda_max(Jhat)=0.104367  lambda*=0.104367  OK 
+         d=6: (46)=59.27 Dels=57.76 LP=15.84 | d=8: (46)=22.08 Dels=21.52 LP=3.69 | d=10: (46)=16.04 Dels=15.63 LP=2.40
+      L=5: lambda_max(Jhat)=0.189794  lambda*=0.189794  OK 
+         d=6: (46)=61.07 Dels=60.05 LP=15.84 | d=8: (46)=31.68 Dels=31.15 LP=3.69 | d=10: (46)=24.58 Dels=24.17 LP=2.40
+  (p,q)=(2,2) degrees 4..5: max|b_meas-b(37)| = 8.33e-17, max|c_meas-c(37)| = 5.55e-17
+      L=5: lambda_max(Jhat)=0.116547  lambda*=0.116547  OK 
+         d=6: (46)=57.92 Dels=52.97 LP=15.84 | d=8: (46)=22.97 Dels=21.01 LP=3.69 | d=10: (46)=16.86 Dels=15.42 LP=2.40
+  (p,q)=(2,3): j_- = 5 >= j_+ = 5, no admissible degrees

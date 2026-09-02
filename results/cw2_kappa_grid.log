@@ -1,0 +1,24 @@
+delta=0.020: M2 0.9179846 | paper kappa_CW 0.9179832 (gamma=5.41e-16) | paper gamma=0 0.9179832 | ours kappa_CW2 0.9179831 (l3=1.13e-08, l2=0.00011, alpha=0.01043, beta=0.00000, slack=2e-14)
+      gain vs gamma=0 slice +5.506e-08 | gain vs paper best +5.506e-08   [29s]
+delta=0.050: M2 0.8251368 | paper kappa_CW 0.8251148 (gamma=5.12e-07) | paper gamma=0 0.8251155 | ours kappa_CW2 0.8251138 (l3=5.83e-07, l2=0.00082, alpha=0.02800, beta=0.00002, slack=-4e-15)
+      gain vs gamma=0 slice +1.754e-06 | gain vs paper best +1.022e-06   [18s]
+C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\phb\johnson.py:138: RuntimeWarning: invalid value encountered in scalar divide
+  B = (zeta * xi - m * z2) ** 2 / (z2 * (1 - m2) * (1 - z2))
+C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\phb\johnson.py:139: RuntimeWarning: invalid value encountered in scalar divide
+  C2 = (z2 - xi * xi) * (zeta * zeta - z2) / (z2 * (1 - m2) * math.sqrt(1 - z2))
+delta=0.080: M2 0.7435727 | paper kappa_CW 0.7434806 (gamma=4.13e-06) | paper gamma=0 0.7434864 | ours kappa_CW2 0.7434762 (l3=3.68e-06, l2=0.00255, alpha=0.04876, beta=0.00011, slack=-9e-15)
+      gain vs gamma=0 slice +1.016e-05 | gain vs paper best +4.351e-06   [17s]
+delta=0.100: M2 0.6927407 | paper kappa_CW 0.6925575 (gamma=1.18e-05) | paper gamma=0 0.6925737 | ours kappa_CW2 0.6925510 (l3=8.92e-06, l2=0.00455, alpha=0.06508, beta=0.00024, slack=2e-13)
+      gain vs gamma=0 slice +2.276e-05 | gain vs paper best +6.506e-06   [17s]
+delta=0.120: M2 0.6438992 | paper kappa_CW 0.6435753 (gamma=2.88e-05) | paper gamma=0 0.6436142 | ours kappa_CW2 0.6435716 (l3=1.74e-05, l2=0.00750, alpha=0.08409, beta=0.00045, slack=-9e-16)
+      gain vs gamma=0 slice +4.256e-05 | gain vs paper best +3.740e-06   [17s]
+delta=0.150: M2 0.5734500 | paper kappa_CW 0.5727924 (gamma=9.35e-05) | paper gamma=0 0.5729105 | ours kappa_CW2 0.5728261 (l3=3.41e-05, l2=0.01422, alpha=0.11941, beta=0.00091, slack=1e-14)
+      gain vs gamma=0 slice +8.443e-05 | gain vs paper best -3.370e-05   [16s]
+delta=0.180: M2 0.5055440 | paper kappa_CW 0.5043559 (gamma=2.71e-04) | paper gamma=0 0.5046632 | ours kappa_CW2 0.5045325 (l3=4.90e-05, l2=0.02413, alpha=0.16595, beta=0.00144, slack=2e-15)
+      gain vs gamma=0 slice +1.306e-04 | gain vs paper best -1.766e-04   [15s]
+delta=0.200: M2 0.4613596 | paper kappa_CW 0.4596761 (gamma=5.42e-04) | paper gamma=0 0.4602215 | ours kappa_CW2 0.4600670 (l3=5.40e-05, l2=0.03244, alpha=0.20548, beta=0.00175, slack=-1e-16)
+      gain vs gamma=0 slice +1.545e-04 | gain vs paper best -3.909e-04   [15s]
+delta=0.220: M2 0.4178746 | paper kappa_CW 0.4155545 (gamma=1.12e-03) | paper gamma=0 0.4164848 | ours kappa_CW2 0.4163195 (l3=5.34e-05, l2=0.04165, alpha=0.25423, beta=0.00193, slack=0e+00)
+      gain vs gamma=0 slice +1.653e-04 | gain vs paper best -7.650e-04   [16s]
+delta=0.235: M2 0.3856495 | paper kappa_CW 0.3827423 (gamma=2.32e-03) | paper gamma=0 0.3841028 | ours kappa_CW2 0.3839414 (l3=4.89e-05, l2=0.04853, alpha=0.29891, beta=0.00195, slack=4e-15)
+      gain vs gamma=0 slice +1.614e-04 | gain vs paper best -1.199e-03   [15s]

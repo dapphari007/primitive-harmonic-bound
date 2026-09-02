@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the preprint."
+title: "A two-row representation graph improves the primitive-harmonic bound on binary codes"
+authors:
+  - family-names: "K"
+    given-names: "Harish"
+version: "1.0"
+date-released: "2026-09-03"
+repository-code: "https://github.com/dapphari007/primitive-harmonic-bound"
+license: MIT
+keywords:
+  - binary codes
+  - MRRW bound
+  - Delsarte linear programming
+  - hyperoctahedral group
+  - representation graph

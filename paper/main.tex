@@ -1,0 +1,293 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{microtype}
+\hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Ind}{\operatorname{Ind}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\Htwo}{H_2}
+\newcommand{\sixj}[6]{\begin{Bmatrix}#1&#2&#3\\#4&#5&#6\end{Bmatrix}}
+
+\title[A two-row representation graph for binary codes]{A two-row representation graph improves\\ the primitive-harmonic bound on binary codes}
+\author{Harish K}
+\address{Independent researcher}
+\email{Arwin@kaaspro.com}
+\date{September 2026}
+
+\begin{abstract}
+The primitive-harmonic (moving-subspace) method of \cite{OAI2026} gave the first improvement since 1977 of the McEliece--Rodemich--Rumsey--Welch upper bound on the rate $R_2(\delta)$ of binary codes. Its binary certificates use representations of the hyperoctahedral group $B_n$ indexed by pairs of one-row Young diagrams. We build the analogue with pairs of two-row diagrams, compute its coordinate-transition coefficients in closed form (eight rational functions whose roots are Littlewood--Richardson admissibility boundaries), and prove them by Schur--Weyl duality and the recoupling of three $SU(2)$ spins with a spin-$\tfrac12$ entry. The resulting explicit exponent $\kappa_{2\mathrm{row}}(\delta)$ satisfies $R_2(\delta)\le\kappa_{2\mathrm{row}}(\delta)$ for all $\delta\in(0,\tfrac12)$, lies strictly below the whole-cube exponent of \cite{OAI2026} at every $\delta$, and therefore improves the bound of \cite[Thm.~1.1]{OAI2026} for every $\delta\ge\delta_1=0.2350$, where that bound reduces to the whole-cube exponent; at $\delta=0.3$ the bound moves from $0.248376$ to $0.248150$. At the middle level the new exponent reproduces the classical second MRRW bound exactly. We also describe the analogous extension inside a constant-weight layer to ambient shapes with any number of rows, give its coefficients in closed form as products of partial-hook differences (identified with Hecht's class of $U(N)$ Racah coefficients and verified exactly on every computed case), and show that the resulting gains form a convergent series of decreasing tiny terms. All computations are reproducible from the accompanying repository.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Let $A_2(n,d)$ be the largest size of a binary code of length $n$ and minimum Hamming distance $d$, and let
+\[
+R_2(\delta)=\limsup_{n\to\infty}\frac1n\log_2 A_2(n,\lceil\delta n\rceil),\qquad 0<\delta<\tfrac12 .
+\]
+The Gilbert--Varshamov bound gives $R_2(\delta)\ge1-\Htwo(\delta)$, where $\Htwo$ is the binary entropy function. The best upper bounds for almost fifty years were those of McEliece, Rodemich, Rumsey and Welch \cite{MRRW}: the first bound $R_2(\delta)\le\Htwo\big(\tfrac12-\sqrt{\delta(1-\delta)}\big)$ and the second bound $M_2(\delta)$, obtained by the Bassalygo--Elias reduction to constant-weight codes. Both are derived from Delsarte's linear program \cite{Delsarte}.
+
+In 2026, \cite{OAI2026} introduced the \emph{primitive-harmonic} or \emph{moving-subspace} method and proved $R_2(\delta)\le\kappa_{\mathrm{bin}}(\delta)$ with $\kappa_{\mathrm{bin}}<M_2$ on the whole interval $(0,\tfrac12)$. The method assigns to every point $x$ of a homogeneous space $X=G/H$ the projection onto a \emph{moving subspace} $\bigoplus_\lambda U_{\lambda,x}$, where $U_{\lambda,x}\subset V_\lambda$ is the isotypic copy of a fixed irreducible representation $E$ of the stabilizer $H_x$ inside an ambient irreducible representation $V_\lambda$ of $G$; the trace inner products of these projections form a positive definite kernel whose Fourier coefficients are controlled by the eigenvalues of a small ``representation graph'' whose vertices are the ambient $\lambda$ and whose edge weights are the squared coefficients with which a coordinate vector moves $U_{\lambda,x}$ into $U_{\lambda',x}$. For binary codes the paper uses $G=B_n=\Z_2^n\rtimes S_n$ acting on the cube, $H=S_n$, $E=S^{(n-k,k)}$ a two-row Specht module, and ambient irreducible representations indexed by pairs of \emph{one-row} Young diagrams; the exponent so obtained is denoted $\kappa_H(\delta)$. Inside a constant-weight layer the analogous construction with $G=S_n$ gives an exponent $\kappa_{CW}(\delta)$, and $\kappa_{\mathrm{bin}}=\min(\kappa_H,\kappa_{CW})$; the two agree for $\delta\ge\delta_1$, where numerically $\delta_1=0.2350$, and $\kappa_{CW}<\kappa_H$ below it.
+
+The paper's spherical certificates (its Section 5) show that letting the ambient representations have more rows produces a hierarchy of successively better bounds. The binary analogue is mentioned there but not pursued. This paper pursues it.
+
+\subsection{Main results}
+
+Irreducible representations of $B_n$ are indexed by bipartitions $(\alpha,\beta)$ with $|\alpha|+|\beta|=n$. Fix the harmonic degree $k\le n/2$ and the stabilizer representation $E_\mu=S^\mu$, $\mu=(n-k,k)$. We let $\alpha=(a_1,a_2)$ and $\beta=(b_1,b_2)$ be \emph{two-row} diagrams, so that the Littlewood--Richardson multiplicity of $S^\mu$ in $\Res^{S_n}_{S_{|\alpha|}\times S_{|\beta|}}$-induced form is $0$ or $1$, and the moving-subspace construction of \cite{OAI2026} applies without change. The coordinate representation $W=\R^n$ of $B_n$ moves one box between $\alpha$ and $\beta$, so the representation graph has eight types of directed edges. Our first result gives their weights.
+
+\begin{theorem}[Theorem~\ref{thm:coeff}]\label{thm:main-coeff}
+For every admissible vertex $\lambda=((a_1,a_2),(b_1,b_2))$ and admissible $k$, the directed squared coordinate coefficients $p(\lambda\to\lambda')$ of the binary two-row graph are the eight rational functions \eqref{eq:eight}. They sum to one over the targets of each vertex, vanish exactly when the target is not admissible, and satisfy the dimension-weighted reciprocity $D_\lambda p(\lambda\to\lambda')=D_{\lambda'}p(\lambda'\to\lambda)$.
+\end{theorem}
+
+The proof identifies each coefficient with a branching ratio times the square of an $SU(2)$ $6j$-symbol with a spin-$\tfrac12$ entry, for which Edmonds' closed forms are available; the final simplification is an identity of rational functions checked by computer algebra.
+
+\begin{theorem}[Theorem~\ref{thm:exponent}]\label{thm:main-exp}
+Let $\kappa_{2\mathrm{row}}(\delta)$ be the explicit four-parameter infimum \eqref{eq:kappa2row}. Then $R_2(\delta)\le\kappa_{2\mathrm{row}}(\delta)$ for every $\delta\in(0,\tfrac12)$, and $\kappa_{2\mathrm{row}}\le\kappa_H$ with the whole-cube exponent of \cite{OAI2026} recovered on the slice $\tilde a=\tilde b=0$.
+\end{theorem}
+
+Numerically the inequality $\kappa_{2\mathrm{row}}<\kappa_H$ is strict at every $\delta$ (Table~\ref{tab:exp}), so for $\delta\ge\delta_1$ the bound of \cite[Thm.~1.1]{OAI2026} is improved; at $\delta=0.3$ the values are $0.250225$ (MRRW), $0.248376$ (\cite{OAI2026}) and $0.248150$ (this paper). The optimal second rows are tiny ($\tilde b^*\approx10^{-4}$ at $\delta=0.3$), which is the mechanism of \cite[Prop.~7.3]{OAI2026} transplanted to the cube: opening a second row costs entropy of order $x\log(1/x)$ and buys a square-root spectral gain.
+
+Section~\ref{sec:layers} treats the constant-weight layer, where the paper's construction uses two-row ambient shapes. Allowing $m$ ambient rows with an $(m-1)$-row stabilizer shape keeps the construction multiplicity-free (Pieri's rule), and the coefficients are squares of $(m-1)$-term sums of $GL_m$ recoupling coefficients, each of which we conjecture, and verify exactly on every computed case, to be a product of partial-hook differences (Conjecture~\ref{conj:Cm}); the formula belongs to the class of $U(N)$ Racah coefficients computed by Hecht \cite{Hecht}. The exponent gains from additional rows are of order $10^{-6}$ and decrease by a factor of about one hundred per row.
+
+\subsection{Conventions}
+$\Htwo(x)=-x\log_2x-(1-x)\log_2(1-x)$; $H(v)=-\sum_iv_i\log_2v_i$. For a partition $\lambda$ of $n$, $f^\lambda$ is the number of standard Young tableaux and $S^\lambda$ the Specht module. For a bipartition $\lambda=(\alpha,\beta)$ of $n$ the irreducible $B_n$-module $V_\lambda$ has dimension $D_\lambda=\binom n{|\beta|}f^\alpha f^\beta$. All code is available at \url{https://github.com/dapphari007/primitive-harmonic-bound}.
+
+\section{The projection bound}\label{sec:bound}
+
+We use the general bound of \cite[Thm.~4.2]{OAI2026} as a black box, in the following form. Let a finite group $G$ act transitively on a finite set $X$ with stabilizer $H$, let $E$ be an irreducible real representation of $H$ with $\End_H(E)=\R$, and let $\Lambda$ be a finite set of irreducible representations $V_\lambda$ of $G$, each containing $E$ with multiplicity exactly one under $H$; write $U_\lambda\subset V_\lambda$ for that copy and $d_E=\dim E$, $D_\lambda=\dim V_\lambda$. Let $W$ be a real representation of $G$ with a $G$-invariant inner product and an $H$-invariant unit vector $w$ (the ``coordinate vector'' of the base point), such that $W\otimes V_\lambda$ is multiplicity-free with constituents among the $V_{\lambda'}$. The \emph{directed squared coefficient} of the move $\lambda\to\lambda'$ is
+\begin{equation}\label{eq:pdef}
+p(\lambda\to\lambda')=\frac{\|\Pi_{\lambda'}(w\otimes v)\|^2}{\|v\|^2},\qquad v\in U_\lambda\setminus\{0\},
+\end{equation}
+where $\Pi_{\lambda'}$ is the projection of $W\otimes V_\lambda$ onto its $V_{\lambda'}$-isotypic component; by Schur's lemma the ratio does not depend on $v$. Then $\sum_{\lambda'}p(\lambda\to\lambda')=1$ and $D_\lambda p(\lambda\to\lambda')=D_{\lambda'}p(\lambda'\to\lambda)$ whenever both $\lambda,\lambda'\in\Lambda$. Let $J_\Lambda$ be the symmetric matrix on $\Lambda$ with entries $\sqrt{p(\lambda\to\lambda')p(\lambda'\to\lambda)}$ and $\lambda_{\max}(J_\Lambda)$ its largest eigenvalue. Finally let $s$ be the smallest value on the code of the normalised ``distance'' function $\langle w_x,w_y\rangle$, where $w_x$ is the coordinate vector of $x\in X$.
+
+\begin{theorem}[{\cite[Thm.~4.2]{OAI2026}}]\label{thm:proj}
+In this setting, if $C\subset X$ satisfies $\langle w_x,w_y\rangle\le s$ for all distinct $x,y\in C$ and $\lambda_{\max}(J_\Lambda)>s$, then
+\[
+|C|\le\frac{1-s}{d_E\,(\lambda_{\max}(J_\Lambda)-s)}\sum_{\lambda\in\Lambda}D_\lambda .
+\]
+\end{theorem}
+
+For the cube $X=\{0,1\}^n$ with $G=B_n$, $H=S_n$, $W=\R^n$ with the signed-permutation action and $w=n^{-1/2}(1,\dots,1)$, one has $\langle w_x,w_y\rangle=1-2d(x,y)/n$, so $s=1-2d/n$. The hypotheses are verified for our graph in Section~\ref{sec:graph}.
+
+\section{The binary two-row graph}\label{sec:graph}
+
+\subsection{Vertices and moves}
+Irreducible representations of $B_n$ are $V_{(\alpha,\beta)}=\Ind_{B_{|\alpha|}\times B_{|\beta|}}^{B_n}\big((S^\alpha\otimes\mathbf1)\boxtimes(S^\beta\otimes\chi)\big)$, where $\chi$ is the product of the signs; equivalently, $V_{(\alpha,\beta)}$ is spanned by the Walsh characters $\chi_S$, $S\subset[n]$, $|S|=|\beta|$, tensored with $S^\alpha(S^c)\otimes S^\beta(S)$. Restricted to $H=S_n$ (the stabilizer of the origin) it is $\Ind_{S_{|\alpha|}\times S_{|\beta|}}^{S_n}(S^\alpha\boxtimes S^\beta)$, so by Frobenius reciprocity and the Littlewood--Richardson rule
+\[
+\dim\Hom_{S_n}(S^\mu,V_{(\alpha,\beta)})=c^\mu_{\alpha\beta}.
+\]
+For $\mu=(n-k,k)$ and two-row $\alpha,\beta$ this is $0$ or $1$; via Schur--Weyl duality (Section~\ref{sec:proof}) it is $1$ exactly when
+\begin{equation}\label{eq:adm}
+a_2+b_2\le k\le\min(a_1+b_2,\ a_2+b_1),
+\end{equation}
+and we call such $(\alpha,\beta;k)$ \emph{admissible}. The coordinate representation is $W=\R^n$; the sign group acts on $e_q$ by $\chi_{\{q\}}$, and
+\[
+W\otimes V_{(\alpha,\beta)}\cong\bigoplus_{r}V_{(\alpha-\square_r,\ \beta+\square)}\oplus\bigoplus_rV_{(\alpha+\square,\ \beta-\square_r)},
+\]
+each constituent multiplicity-free, by the Pieri rule applied to the two blocks; so a move takes one box from a row $r$ of $\alpha$ to a row $r'$ of $\beta$, or from $\beta$ to $\alpha$. We write $p(a_r\to b_{r'})$ and $p(b_r\to a_{r'})$ for the corresponding coefficients \eqref{eq:pdef}, and $p(\lambda\to\lambda)$ for the self-loop, which exists when a box moves within a block; for the bound only the off-diagonal moves between admissible vertices matter, and the self-loop vanishes for this $W$ (the coordinate vector is orthogonal to the trivial summand).
+
+\subsection{The closed forms}
+\begin{theorem}\label{thm:coeff}
+Let $\lambda=((a_1,a_2),(b_1,b_2))$ and $k$ be admissible and put $N=n(a_1+1-a_2)(b_1+1-b_2)$. Then
+\begin{equation}\label{eq:eight}
+\begin{aligned}
+p(a_1\to b_1)&=\frac{(a_1+1)(a_1+b_2-k)(a_2+b_1+1-k)}N, &
+p(b_1\to a_1)&=\frac{(b_1+1)(a_2+b_1-k)(a_1+b_2+1-k)}N,\\
+p(a_1\to b_2)&=\frac{(a_1+1)(k-a_2-b_2)(a_1+b_1+1-k)}N, &
+p(b_1\to a_2)&=\frac{(b_1+1)(k-a_2-b_2)(a_1+b_1+1-k)}N,\\
+p(a_2\to b_1)&=\frac{a_2(k-a_2-b_2+1)(a_1+b_1+2-k)}N, &
+p(b_2\to a_1)&=\frac{b_2(k-a_2-b_2+1)(a_1+b_1+2-k)}N,\\
+p(a_2\to b_2)&=\frac{a_2(a_2+b_1-k)(a_1+b_2+1-k)}N, &
+p(b_2\to a_2)&=\frac{b_2(a_1+b_2-k)(a_2+b_1+1-k)}N .
+\end{aligned}
+\end{equation}
+A move whose target is not admissible has coefficient zero, and the formulas vanish there. Moreover the eight coefficients sum to one, and $D_\lambda p(\lambda\to\lambda')=D_{\lambda'}p(\lambda'\to\lambda)$ on every edge, with $D_{(\alpha,\beta)}=\binom n{|\beta|}f^\alpha f^\beta$.
+\end{theorem}
+
+The roots of each coefficient are the boundaries of the admissibility region \eqref{eq:adm} of the target. For $a_2=b_2=0$ the formulas $p(a_1\to b_1)$ and $p(b_1\to a_1)$ reduce to the squared coefficients $\alpha_j^2,\beta_j^2$ of \cite[\S2]{OAI2026} (with $j=b_1$), while $p(a_1\to b_2)=k(n-k+1)/(n(j+1))$ and $p(b_1\to a_2)=k(n-k+1)/(n(n-j+1))$ are the masses that the paper's one-row graph leaks into two-row targets.
+
+\subsection{Proof of Theorem~\ref{thm:coeff}}\label{sec:proof}
+The formulas were found by exact interpolation in $k$ at each vertex from coefficients computed by projection (Section~\ref{sec:numerics}); the proof has three steps.
+
+\emph{Step 1: fibres.} Fix the base point and the coordinate $q$. In $W\otimes V_\lambda$ the sign group $\Z_2^n$ acts diagonalisably; on the block where $q\notin S$ the $\chi_{S'}$-eigenspace, $S'=S\cup\{q\}$, is
+\[
+G(S')=\bigoplus_{q\in S'}e_q\otimes\chi_{S'\setminus q}\otimes S^\beta(S'\setminus q)\otimes S^\alpha(S'^c\cup q),
+\]
+an $S_{S'}\times S_{S'^c}$-module isomorphic to $\Ind_{S_j\times S_1}^{S_{j+1}}(S^\beta\boxtimes\mathbf1)\boxtimes\Res^{S_{n-j}}_{S_{n-j-1}}S^\alpha=\bigoplus S^{\beta+\square}\boxtimes S^{\alpha-\square}$, multiplicity-free by Pieri's rule ($j=|\beta|$). The fibre over $S'$ of the constituent $V_{\lambda'}$, $\lambda'=(\alpha-\square_r,\beta+\square_{r'})$, is the summand $S^{\beta+\square_{r'}}\boxtimes S^{\alpha-\square_r}$, and $\Pi_{\lambda'}$ is the direct sum over $S'$ of these isotypic projections. Hence, writing $v=\sum_S\chi_S\otimes v_S$ for the vector \eqref{eq:pdef} and averaging over $q$ (which is what replaces $e_q$ by the $H$-invariant $w$),
+\[
+p(\alpha_r\to\beta_{r'})=\frac1{\|v\|^2}\sum_{S'}\big\|\Pi_{r',r}\,u_{S'}\big\|^2,\qquad u_{S'}=n^{-1/2}\big(v_{S'\setminus q}\big)_{q\in S'} .
+\]
+
+\emph{Step 2: the mass leaving a row.} The $\alpha$-part of the projection acts slot by slot, and on $S^\alpha(A)$ the operator $\sum_{q\in A}\Pi^{(q)}_{\alpha-\square_r}$ commutes with $\Sym(A)$, hence is the scalar $|A|f^{\alpha-\square_r}/f^\alpha$ by Schur's lemma and a dimension count. Summing over $S$ and $q\notin S$ gives, for every $v\in V_\lambda$,
+\begin{equation}\label{eq:rowmass}
+\sum_{r'}p(\alpha_r\to\beta_{r'})=\frac{|\alpha|}n\cdot\frac{f^{\alpha-\square_r}}{f^\alpha},
+\end{equation}
+independent of $k$. (This is the row sum of \eqref{eq:eight}: $\frac{(a_1+1)(a_1-a_2)}{n(a_1-a_2+1)}$ for $r=1$ and $\frac{a_2(a_1-a_2+2)}{n(a_1-a_2+1)}$ for $r=2$.)
+
+\emph{Step 3: the split between the two $\beta$-rows.} By Frobenius reciprocity, which scales Hilbert--Schmidt norms by the index, $p(\alpha_r\to\beta_{r'})=\frac{|\alpha|}n\frac{f^{\alpha-\square_r}}{f^\alpha}\rho_{r'}$, where $\rho_{r'}$ is the squared cosine, in the two-dimensional space
+\[
+\Hom_{K_1}\big(\Res S^\mu,\ S^\beta\boxtimes\mathbf1\boxtimes S^{\alpha'}\big),\qquad K_1=S_j\times S_1\times S_{n-j-1},\quad \alpha'=\alpha-\square_r,
+\]
+of the angle between the line of maps factoring through $S^\beta\boxtimes S^\alpha$ (the subgroup $S_j\times S_{n-j}$) and the line of maps factoring through $S^{\beta+\square_{r'}}\boxtimes S^{\alpha'}$ (the subgroup $S_{j+1}\times S_{n-j-1}$); the two latter lines, for $r'=1,2$, are orthogonal. Schur--Weyl duality on $(\C^2)^{\otimes n}$ identifies the two-row Specht module $S^{(m-a,a)}$ with the $SU(2)$ representation of spin $m/2-a$, the restriction to a Young subgroup with the tensor product of the blocks, and the two-dimensional space above, isometrically up to a constant, with $\Hom_{SU(2)}\big(V_J,\ V_{j_\beta}\otimes V_{1/2}\otimes V_{j_{\alpha'}}\big)$, where
+\[
+J=\tfrac n2-k,\qquad j_\alpha=\tfrac{a_1-a_2}2,\qquad j_\beta=\tfrac{b_1-b_2}2,\qquad j_{\alpha'}=j_\alpha\mp\tfrac12\ (r=1,2),\qquad j_\nu=j_\beta\pm\tfrac12\ (r'=1,2).
+\]
+Admissibility \eqref{eq:adm} is the triangle inequality for $(j_\alpha,j_\beta,J)$. The two lines are the two coupling schemes of three spins, so by the recoupling formula
+\[
+\rho_{r'}=(2j_\alpha+1)(2j_\nu+1)\sixj{j_\beta}{\tfrac12}{j_\nu}{j_{\alpha'}}{J}{j_\alpha}^{\,2}.
+\]
+A $6j$-symbol with a spin-$\tfrac12$ entry has a closed form \cite[Table~5]{Edmonds}; we validated that table against exact values on all $1{,}326$ admissible symbols with entries at most $5$. Substituting it, the product of branching ratio and squared recoupling coefficient simplifies, as an identity of rational functions of the integers $a_1,a_2,b_1,b_2,k$, to the four $\alpha\to\beta$ formulas of \eqref{eq:eight}; the identities were checked by computer algebra (\texttt{experiments/hyperoct\_proof\_check.py} in the repository). Moves from $\beta$ to $\alpha$ follow by exchanging the roles of the two blocks. The sum rule and the reciprocity are then identities of rational functions, verified in the same script. Finally, the target is admissible exactly when the triangle inequalities for $(j_{\alpha'},j_\nu,J)$ hold, and the vanishing of the $6j$-symbol outside them is the vanishing of the formulas. \qed
+
+\subsection{Numerical origin and checks}\label{sec:numerics}
+The coefficients were first computed exactly for $n\le13$ by realising $V_\lambda$ inside signed permutation modules, splitting $W\otimes V_\lambda$ into isotypic components by Lagrange interpolation on the known eigenvalues of central class sums, and evaluating \eqref{eq:pdef} in rational arithmetic. Theorem~\ref{thm:coeff} agrees with all $3{,}340$ coefficients so computed to $3\times10^{-7}$ (the floating-point noise of the projection); the sum rule was checked exactly on $136{,}854$ vertex--degree pairs with $n\le40$ and the reciprocity on $523{,}432$ edges with $n\le36$ before the proof was found.
+
+\section{The exponent}\label{sec:exponent}
+
+\subsection{Limits of the coefficients}
+Write a vertex in normalised coordinates $u=j/n$, $\tilde a=a_2/n$, $\tilde b=b_2/n$, $b=k/n$, and
+\[
+A_1=1-u-\tilde a,\quad A_2=\tilde a,\quad B_1=u-\tilde b,\quad B_2=\tilde b,\qquad N_\infty=(A_1-A_2)(B_1-B_2),
+\]
+\[
+X=(A_2+B_1-b)(A_1+B_2-b),\qquad Y=(b-A_2-B_2)(1-A_2-B_2-b),\qquad X+Y=N_\infty .
+\]
+The admissible region is $\tilde a+\tilde b\le b\le\min(A_1+B_2,A_2+B_1)$, $\tilde a\le\frac{1-u}2$, $\tilde b\le\frac u2$, $b\le\frac12$. As $n\to\infty$ with these ratios fixed, the eight coefficients converge uniformly on compact subsets of the interior to
+\[
+p(a_1\to b_1)\to\frac{A_1X}{N_\infty},\quad p(b_1\to a_1)\to\frac{B_1X}{N_\infty},\quad p(a_2\to b_2)\to\frac{A_2X}{N_\infty},\quad p(b_2\to a_2)\to\frac{B_2X}{N_\infty},
+\]
+\[
+p(a_1\to b_2)\to\frac{A_1Y}{N_\infty},\quad p(b_2\to a_1)\to\frac{B_2Y}{N_\infty},\quad p(a_2\to b_1)\to\frac{A_2Y}{N_\infty},\quad p(b_1\to a_2)\to\frac{B_1Y}{N_\infty},
+\]
+so the symmetric edge weights $\sqrt{p\,p'}$ converge to $\sqrt{A_1B_1}X/N_\infty$ and its companions, and the row sum of the limiting symmetric matrix is
+\begin{equation}\label{eq:Lambda}
+\Lambda_\infty(u,\tilde a,\tilde b,b)=\frac{2\big[X\big(\sqrt{A_1B_1}+\sqrt{A_2B_2}\big)+Y\big(\sqrt{A_1B_2}+\sqrt{A_2B_1}\big)\big]}{N_\infty}.
+\end{equation}
+At $\tilde a=\tilde b=0$ this is $2\sqrt{u(1-u)}\,X/N_\infty=\Gamma_H(u,b)$, the quantity of \cite[\S2]{OAI2026}.
+
+\subsection{Dimensions and the exponent}
+By the hook-length formula and Stirling's formula, $\frac1n\log_2D_\lambda\to\Phi_{\mathrm{amb}}(u,\tilde a,\tilde b)=\Htwo(u)+(1-u)\Htwo\big(\tfrac{\tilde a}{1-u}\big)+u\Htwo\big(\tfrac{\tilde b}u\big)$ and $\frac1n\log_2 d_{E_\mu}\to\Htwo(b)$. Define
+\begin{equation}\label{eq:kappa2row}
+\kappa_{2\mathrm{row}}(\delta)=\inf\Big\{\Phi_{\mathrm{amb}}(u,\tilde a,\tilde b)-\Htwo(b)\ :\ (u,\tilde a,\tilde b,b)\ \text{admissible},\ \Lambda_\infty(u,\tilde a,\tilde b,b)>1-2\delta\Big\}.
+\end{equation}
+
+\begin{theorem}\label{thm:exponent}
+For every $0<\delta<\tfrac12$, $R_2(\delta)\le\kappa_{2\mathrm{row}}(\delta)$. Moreover $\kappa_{2\mathrm{row}}(\delta)\le\kappa_H(\delta)$, where $\kappa_H$ is the whole-cube exponent of \cite{OAI2026}, obtained by restricting the infimum to $\tilde a=\tilde b=0$.
+\end{theorem}
+
+\begin{proof}
+Fix an interior admissible point $(u,\tilde a,\tilde b,b)$ with $\Lambda_\infty>1-2\delta$ and let $\Omega_n$ be the box of side $m_n\to\infty$, $m_n=o(n)$, of vertices below $(un,\tilde an,\tilde bn)$ at $k=\lfloor bn\rfloor$. By Theorem~\ref{thm:coeff} the symmetric edge weights of the four directions converge uniformly on $\Omega_n$ to their limits, so the product-sine test vector of \cite[Lemma~7.2]{OAI2026} gives $\lambda_{\max}(J_{\Omega_n})\ge\Lambda_\infty-o(1)$, while the row-sum bound gives the matching upper limit. Theorem~\ref{thm:proj} applies with $G=B_n$, $H=S_n$, $E=E_\mu$: multiplicity one holds by \eqref{eq:adm}, $\End_H(E_\mu)=\R$ since Specht modules are absolutely irreducible, and the sum rule and reciprocity are part of Theorem~\ref{thm:coeff}. Hence $A_2(n,\lceil\delta n\rceil)\le\frac{1-s}{d_\mu(\lambda_{\max}-s)}\sum_{\Omega_n}D_\lambda$ with $s=1-2\delta$. The box has $n^{o(1)}$ vertices, and its largest dimension has exponent $\Phi_{\mathrm{amb}}+o(1)$, while $d_\mu=2^{(\Htwo(b)+o(1))n}$. Taking logarithms, dividing by $n$, letting $n\to\infty$, then taking the infimum over admissible points and closing the strict inequality as in the proof of \cite[Thm.~1.2]{OAI2026} proves the first claim. The second is immediate from \eqref{eq:kappa2row}, since $\tilde a=\tilde b=0$ recovers $\Gamma_H$ and $\Phi_{\mathrm{amb}}=\Htwo(u)$.
+\end{proof}
+
+\subsection{Values}
+The infimum \eqref{eq:kappa2row} is evaluated numerically: for fixed $(u,\tilde a,\tilde b)$ the objective decreases in $b$, so $b$ is taken as the largest admissible value with $\Lambda_\infty\ge1-2\delta$, and the remaining three-dimensional minimisation is done by Nelder--Mead from many starts, seeded at the one-row optimum. Table~\ref{tab:exp} lists the results together with $M_2(\delta)$ and $\kappa_H(\delta)$, both recomputed by us and agreeing with \cite{OAI2026}. The improvement over $\kappa_H$ is positive at every $\delta$ and, since $\kappa_{\mathrm{bin}}=\kappa_H$ for $\delta\ge\delta_1=0.2350$, improves \cite[Thm.~1.1]{OAI2026} there. The margins ($10^{-3}$ to $10^{-7}$) are far above the optimizer's precision ($10^{-9}$).
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lllll@{}}\toprule
+$\delta$ & $M_2(\delta)$ & $\kappa_H(\delta)$ \cite{OAI2026} & $\kappa_{2\mathrm{row}}(\delta)$ & optimum $(u,\tilde a,\tilde b,b)$\\\midrule
+0.2350 & 0.385649 & 0.382742 & 0.381719 & $(0.0961,\ 6.3\times10^{-5},\ 6.0\times10^{-4},\ 0.0101)$\\
+0.2500 & 0.353711 & 0.350379 & 0.349630 & $(0.0814,\ 3.5\times10^{-5},\ 4.0\times10^{-4},\ 0.0072)$\\
+0.2800 & 0.290634 & 0.288004 & 0.287627 & $(0.0584,\ 1.0\times10^{-5},\ 1.7\times10^{-4},\ 0.0037)$\\
+0.3000 & 0.250225 & 0.248376 & 0.248150 & $(0.0463,\ 4.2\times10^{-6},\ 8.7\times10^{-5},\ 0.0023)$\\
+0.3077 & 0.235178 & 0.233581 & 0.233398 & $(0.0423,\ 3.0\times10^{-6},\ 6.7\times10^{-5},\ 0.0019)$\\
+0.3500 & 0.158133 & 0.157506 & 0.157458 & $(0.0243,\ 3.4\times10^{-7},\ 1.4\times10^{-5},\ 0.0006)$\\
+0.4000 & 0.081469 & 0.081337 & 0.081331 & $(0.0103,\ 1.1\times10^{-8},\ 1.1\times10^{-6},\ 0.0001)$\\
+0.4500 & 0.025266 & 0.025257 & 0.025257 & $(0.0025,\ 0,\ 1.6\times10^{-8},\ 10^{-5})$\\
+\bottomrule
+\end{tabular}
+\caption{The two-row exponent against the second MRRW bound and the whole-cube exponent of \cite{OAI2026}. For $\delta\ge\delta_1=0.2350$ the paper's bound $\kappa_{\mathrm{bin}}$ equals $\kappa_H$.}\label{tab:exp}
+\end{table}
+
+\begin{remark}[The middle level]
+At $u=\tfrac12$ with $\tilde a=\tilde b$, the infimum \eqref{eq:kappa2row} reproduces the classical second MRRW bound $M_2(\delta)$ to all computed digits (seven decimals on a grid of $\delta$). Thus the classical bound is a slice of the two-row graph, which explains the numerical coincidence $\kappa_{2\mathrm{row}}=M_2$ for $\delta\le0.12$ in the full optimisation, where the optimum sits at $u=\tfrac12$. We have not derived this identity analytically.
+\end{remark}
+
+\begin{remark}[Finite lengths]
+Because the optimal second rows are of order $10^{-4}$ and smaller, at practical lengths a box carries second rows of size $0$ or $1$ and its extra ambient dimension outweighs the spectral gain. Evaluating the finite-$n$ bound of Theorem~\ref{thm:proj} over boxes in $(j,a_2,b_2)$ at $\delta=0.3$, the two-row bound is worse than the one-row bound of \cite{OAI2026} by $2.3$ bits at $n=2\times10^4$ and by $0.6$ bits at $n=5\times10^4$; the crossover is near $n=10^5$. The improvement is asymptotic.
+\end{remark}
+
+\section{Layers with any number of rows}\label{sec:layers}
+
+Inside a layer $X_w=\{x\in\{0,1\}^n:|x|=w\}$, \cite[\S3]{OAI2026} takes $G=S_n$, $H=S_w\times S_N$ ($N=n-w$), $E=S^{(w-p,p)}\boxtimes S^{(N-q,q)}$ and two-row ambient shapes $(n-j,j)$; the coordinate vector is the centred indicator $\ell_x=\sqrt{n/(wN)}\,(\mathbf1_x-\frac wn\mathbf1)$, $\langle\ell_x,\ell_y\rangle$ is the normalised Johnson eigenvalue, and the Bassalygo--Elias reduction gives the exponent $\kappa_{CW}$. We take $E=S^\varepsilon\boxtimes\mathbf1_{S_N}$ with $\varepsilon$ an $(m-1)$-row shape of $w$. By Pieri's rule $\Hom_H(E,S^\lambda)$ is one-dimensional exactly when $\lambda$ has at most $m$ rows and interlaces $\varepsilon$, i.e.\ $\lambda_m\le\varepsilon_{m-1}\le\lambda_{m-1}\le\dots\le\varepsilon_1\le\lambda_1$; these $\lambda$ form the vertex set, and $\ell_x$ moves one box between rows or fixes $\lambda$. For $m=2$ (and $q=0$) this is the paper's construction, and our coefficients reproduce its associated Hahn coefficients there. With two nontrivial factors and $m\ge3$ the Littlewood--Richardson multiplicity can be $2$ ($c^{(3,2,1)}_{(2,1),(2,1)}=2$), so $q>0$ cannot be combined with a third row inside Theorem~\ref{thm:proj}.
+
+\subsection{Reduction to $GL_m$ recoupling}
+For a move $\lambda\to\lambda'=\lambda-\square_r+\square_{r'}$ with $\nu=\lambda-\square_r$, the argument of Section~\ref{sec:proof} (Frobenius reciprocity, the row-mass identity, and the orthogonality of $\ell_x$ to $\mathbf1$, which removes the complement block) gives
+\begin{equation}\label{eq:tau}
+p(\lambda\to\lambda')=\frac wN\,\frac{f^{\lambda'}}{f^\nu}\,\tau^2,\qquad
+\tau=\sum_{t=1}^{m-1}\frac{f^{\varepsilon-\square_t}}{f^\varepsilon}\,R_t(\lambda,\nu)\,R_t(\lambda',\nu),
+\end{equation}
+where $R_t(\lambda,\nu)$ is the cosine of the angle between two coupling schemes of $V_\lambda$ inside $V_{\varepsilon-\square_t}\otimes\C^m\otimes\Sym^N\C^m$ as $GL_m$-modules: through $V_\varepsilon\otimes\Sym^N$, and through $V_\nu\otimes\C^m$. We computed these overlaps in Gelfand--Tsetlin bases \cite{Molev} (with all commutation, Serre and adjointness relations checked exactly) and recovered all $366$ off-diagonal coefficients computed exactly in $S_n$ for $m=3$, $n\le12$, to $2\times10^{-14}$.
+
+\subsection{The closed form}
+Write partial hooks $Q_k=\lambda_k+m-k$ and $P_k=\varepsilon_k+m-k$, $k=1,\dots,m$, with $\varepsilon_m=0$.
+
+\begin{conjecture}\label{conj:Cm}
+For $\nu=\lambda-\square_r$ and $t\le m-1$,
+\[
+R_t(\lambda,\nu)^2=\frac{\prod_{k\ne r}|P_t-Q_k-1|\ \prod_{k\ne t}|Q_r-P_k|}{\prod_{k\ne t}|P_t-P_k-1|\ \prod_{k\ne r}|Q_r-Q_k|},
+\]
+and in \eqref{eq:tau} the $t$-th term carries the sign $(-1)^{[r\le t]+[r'\le t]}$ relative to the non-negative square roots: it is negative exactly when row $t$ lies between the two moving rows.
+\end{conjecture}
+
+The evidence is exhaustive on everything computed: for $m=3$ the formula for $R_t^2$ is exact on $1{,}458$ generic points ($6\times10^{-15}$) and the coefficients match all $366$ exact $S_n$ values ($2\times10^{-14}$) and $25$ random cases up to $n=29$ ($6\times10^{-16}$); for $m=4$ the formula is exact on $183$ squared overlaps ($10^{-15}$) and the sign rule was read off all twelve move types. The resulting coefficients satisfy the dimension-weighted reciprocity $f^\lambda p(\lambda\to\lambda')=f^{\lambda'}p(\lambda'\to\lambda)$ \emph{exactly in rational arithmetic}, separately for the rational and the radical parts, on $364$ of $364$ ($m=3$) and $517$ of $517$ ($m=4$) random cases, and the self-loops $1-\sum_{\lambda'\ne\lambda}p$ agree with the exact values ($6\times10^{-14}$). The overlaps $R_t$ are $U(m)$ Racah coefficients for the recoupling of $[\varepsilon-\square_t]\times[1]\times[N]$, with two totally symmetric representations; Hecht \cite{Hecht} derived this class in general as matrix elements of permutation operators in Young--Yamanouchi bases, obtaining products of factors $1-1/\tau_{ik}$ of ``axial distances'' $\tau_{ik}=(f_i-i)-(f_k-k)$, which are partial-hook differences, and for a single moving box a pure product. Conjecture~\ref{conj:Cm} should therefore follow from \cite{Hecht} by specialisation; we have not carried out the bookkeeping of phases and normalisations.
+
+\subsection{The exponent}
+With $\ell=\lambda/n$, $\alpha=w/n$, $\omega=\varepsilon/n$ (padded with $0$), the limits are $p_{r\to r'}=\frac\alpha{1-\alpha}\ell_r\tilde\tau^2$ with $\tilde\tau=\sum_t(-1)^{[r\le t]+[r'\le t]}\frac{\omega_t}\alpha\sqrt{\tilde R_t(r)\tilde R_t(r')}$, where $\tilde R_t(r)$ is the degree-zero limit of $R_t^2/\ell_r$; the row sum of the limiting symmetric matrix, including the self-loop, is
+\[
+\Lambda=1-\sum_{r<r'}\big(\sqrt{p_{r\to r'}}-\sqrt{p_{r'\to r}}\big)^2,
+\]
+and the bound on binary codes is $\kappa_{CW,m}(\delta)=\inf\{1-\Htwo(\alpha)+H(\ell)-\alpha H(\omega/\alpha)\}$ over interlacing $(\ell,\omega)$ with $\Lambda>1-\delta/(2\alpha(1-\alpha))$, by the same box argument. Conditional on Conjecture~\ref{conj:Cm}, Table~\ref{tab:layers} compares $m=3$ and $m=4$ with $\kappa_{CW}$ of \cite{OAI2026} (with its parameter $q$ optimised). The three-row graph beats $\kappa_{CW}$ for $\delta\le0.12$, by at most $6.5\times10^{-6}$, and loses beyond, where the paper's $q>0$ construction is better and cannot be combined with a third row; the fourth row adds about one percent of what the third row added, at optimal row sizes of order $10^{-7}$. On the slice $\lambda_m=0$ our $\Lambda$ agrees with the paper's asymptotic Perron value to twelve digits.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{@{}lllll@{}}\toprule
+$\delta$ & $\kappa_{CW}$ \cite{OAI2026} & $\kappa_{CW,3}$ & $\kappa_{CW,4}$ & $\kappa_{CW,4}-\kappa_{CW,3}$\\\midrule
+0.05 & 0.8251148 & 0.8251138 & 0.8251138 & $-1.2\times10^{-8}$\\
+0.08 & 0.7434806 & 0.7434762 & 0.7434761 & $-1.1\times10^{-7}$\\
+0.10 & 0.6925575 & 0.6925510 & 0.6925507 & $-2.8\times10^{-7}$\\
+0.12 & 0.6435753 & 0.6435716 & 0.6435711 & $-5.2\times10^{-7}$\\
+0.15 & 0.5727924 & 0.5728261 & 0.5728252 & $-9.0\times10^{-7}$\\
+\bottomrule
+\end{tabular}
+\caption{Layer exponents with three and four ambient rows (conditional on Conjecture~\ref{conj:Cm}).}\label{tab:layers}
+\end{table}
+
+\section{Verification of the certificates of \cite{OAI2026}}\label{sec:audit}
+Before building on the paper we re-derived its binary, constant-weight and spherical certificates from scratch and tested them against exact Delsarte linear programs. The whole-cube bound \cite[eq.~(23)]{OAI2026} never falls below the exact Delsarte LP value in $1{,}659$ pairs $(n,d)$ ($4\le n\le56$ and $n=60,64$, rational simplex for $n>45$); the constant-weight bound \cite[eq.~(46)]{OAI2026} never falls below the exact Johnson-scheme LP in $1{,}090$ cases ($n\le30$); the spherical bounds never fall below the Delsarte--Goethals--Seidel LP in $64$ cases. The associated Hahn coefficients \cite[(35)--(37)]{OAI2026} agree with coefficients measured from an explicit construction to $10^{-16}$, the best positive-definite constant equals the Perron eigenvalue in every configuration tested, and the paper's asymptotic numbers (the crossing $\delta_0=0.19504$ with $M_2$, the kissing exponent $0.3966$, the sphere-packing deficits of its Figure~4) reproduce. Details are in the repository.
+
+\section*{Acknowledgements}
+The computations, the discovery of the closed forms and a first draft of this text were carried out with the assistance of an AI system (Claude, Anthropic). The author takes full responsibility for the statements and proofs.
+
+\begin{thebibliography}{9}
+\bibitem{OAI2026} OpenAI, \emph{Ten advances in mathematics and theoretical computer science}, Chapter 2: Binary and spherical codes, August 2026. \url{https://cdn.openai.com/pdf/ten-proofs-oai.pdf}; Lean formalisation at \url{https://github.com/openai/ten-proofs}.
+\bibitem{MRRW} R.~J. McEliece, E.~R. Rodemich, H. Rumsey, L.~R. Welch, New upper bounds on the rate of a code via the Delsarte--MacWilliams inequalities, \emph{IEEE Trans. Inform. Theory} 23 (1977), 157--166.
+\bibitem{Delsarte} P. Delsarte, An algebraic approach to the association schemes of coding theory, \emph{Philips Res. Rep. Suppl.} 10 (1973).
+\bibitem{Edmonds} A.~R. Edmonds, \emph{Angular Momentum in Quantum Mechanics}, Princeton University Press, 1957.
+\bibitem{Hecht} K.~T. Hecht, A simple class of $U(N)$ Racah coefficients and their application, \emph{Comm. Math. Phys.} 41 (1975), 135--156.
+\bibitem{Molev} A.~I. Molev, Gelfand--Tsetlin bases for classical Lie algebras, in: \emph{Handbook of Algebra}, Vol.~4, Elsevier, 2006, 109--170.
+\bibitem{BL} L.~C. Biedenharn, J.~D. Louck, \emph{Angular Momentum in Quantum Physics} and \emph{The Racah--Wigner Algebra in Quantum Theory}, Encyclopedia of Mathematics and its Applications 8--9, Addison-Wesley, 1981.
+\bibitem{GK} L. Geissinger, D. Kinch, Representations of the hyperoctahedral groups, \emph{J. Algebra} 53 (1978), 1--20.
+\bibitem{FH} W. Fulton, J. Harris, \emph{Representation Theory: A First Course}, Springer, 1991.
+\end{thebibliography}
+
+\end{document}

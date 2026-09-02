@@ -1,0 +1,36 @@
+     n | classical log2     rate    L0 |  one-row log2     rate      (k,L) |  two-row log2     rate      (k,I,J) |  gain row  gain two
+    24 |         19.263  0.80263     4 |        19.774  0.82393     (1, 7) |        19.290  0.80376    (3, 5, 3) |    -0.511    -0.027   [0s]
+    32 |         23.489  0.73403     5 |        24.413  0.76292     (1, 8) |        23.795  0.74358    (1, 5, 1) |    -0.924    -0.306   [0s]
+    48 |         31.898  0.66455     7 |        32.436  0.67575     (1, 9) |        31.907  0.66474    (1, 7, 1) |    -0.538    -0.009   [1s]
+    64 |         40.478  0.63247     9 |        40.566  0.63384    (1, 11) |        40.349  0.63045    (4, 9, 4) |    -0.088    +0.130   [1s]
+    96 |         55.853  0.58180    12 |        55.782  0.58106    (1, 14) |        55.743  0.58066   (4, 12, 4) |    +0.071    +0.110   [2s]
+   128 |         70.875  0.55371    15 |        70.594  0.55151    (1, 17) |        70.755  0.55278   (4, 15, 4) |    +0.281    +0.119   [3s]
+   192 |         99.002  0.51564    20 |        99.732  0.51944    (2, 25) |        99.051  0.51589   (1, 20, 1) |    -0.729    -0.049   [5s]
+   256 |        127.618  0.49851    26 |       126.998  0.49609    (1, 28) |       127.580  0.49836   (4, 26, 4) |    +0.619    +0.037   [7s]
+   384 |        183.291  0.47732    37 |       181.983  0.47391    (2, 41) |       183.167  0.47700   (2, 39, 1) |    +1.308    +0.124   [12s]
+   512 |        237.155  0.46319    47 |       236.197  0.46132    (3, 54) |       237.184  0.46325   (1, 47, 1) |    +0.958    -0.028   [20s]
+   768 |        346.369  0.45100    69 |       342.858  0.44643    (3, 75) |       344.712  0.44884   (4, 75, 1) |    +3.511    +1.657   [34s]
+  1024 |        451.605  0.44102    89 |       448.576  0.43806    (4, 98) |       450.665  0.44010   (5, 98, 1) |    +3.029    +0.941   [58s]
+Traceback (most recent call last):
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\experiments\sph_crossover.py", line 43, in <module>
+    k2, b2 = argmin_1d(two_k, 1, kmax, coarse=12)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\experiments\sph_crossover.py", line 15, in argmin_1d
+    v = f(x)
+        ^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\experiments\sph_crossover.py", line 39, in two_k
+    I, v = argmin_1d(lambda I: (log2_bound_two_row(n, s, k, I, J) if I > k else None) or math.inf, k + 1, Lmax, coarse=20)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\experiments\sph_crossover.py", line 15, in argmin_1d
+    v = f(x)
+        ^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\experiments\sph_crossover.py", line 39, in <lambda>
+    I, v = argmin_1d(lambda I: (log2_bound_two_row(n, s, k, I, J) if I > k else None) or math.inf, k + 1, Lmax, coarse=20)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\phb\spherical.py", line 131, in log2_bound_two_row
+    terms = [math.log2(D2(n, i, j)) for i in range(k, I + 1) for j in range(0, J + 1)]
+                       ^^^^^^^^^^^
+  File "C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\phb\spherical.py", line 62, in D2
+    return ((2 * i + n - 2) * (2 * j + n - 4) * (i - j + 1) * (i + j + n - 3)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OverflowError: int too large to convert to float

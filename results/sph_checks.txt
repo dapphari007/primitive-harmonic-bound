@@ -1,0 +1,29 @@
+C:\Users\akck1\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\numpy\_core\fromnumeric.py:83: RuntimeWarning: overflow encountered in reduce
+  return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+C:\Users\akck1\Desktop\Projects\Research\primitive-harmonic-bound\phb\spherical.py:220: RuntimeWarning: invalid value encountered in scalar divide
+  R.append(num / den)
+(a) classical harmonic path vs Gegenbauer roots
+   n=  3 L= 6: max|eig - root| = 5.55e-16
+   n=  5 L=10: max|eig - root| = 3.33e-16
+   n=  8 L=12: max|eig - root| = 9.71e-16
+   n= 24 L=20: max|eig - root| = 1.33e-15
+   n= 50 L=30: max|eig - root| = 9.99e-16
+(b) two-row (81) vs general (76), r=1
+   max |(81) - (76)| over 200 random (n,k,i,j): 0.00e+00
+(c) full-graph normalisation (77) and (d) reciprocity (78) with Weyl dimensions (113)
+   r=1: max|sum p - 1| = 2.22e-16   max rel. violation of (78) = 2.37e-14   max rel |D2 - Weyl| = 2.47e-14
+   r=2: max|sum p - 1| = 2.22e-16   max rel. violation of (78) = 2.42e-14
+   r=3: max|sum p - 1| = 2.22e-16   max rel. violation of (78) = 2.38e-14
+(e) classical exponents
+   gamma_0 = sup_s [1/2 log2(2/(1-s)) - H_sph(a0(s))] = 0.599056 at s = 0.45403   (KL 1978 packing exponent: 0.5990)
+   B_KL(1/2) = 0.400944   (KL kissing-number exponent: 0.4014)
+   H_sph(a0(1/2)) (whole-sphere, no cap) = 0.401414
+   lambda_* = (1/2) log2(2 pi / e) = 0.604400544
+(f) Chebyshev construction (106)-(109)
+   N=  2 R=    1: 2Gamma=0.743623  Phi=0.890482  packing objective=0.591349  (109) limit N->inf: 0.604012   deficit from lambda_*: 1.31e-02
+   N=  4 R=    4: 2Gamma=0.863450  Phi=1.347094  packing objective=0.589154  (109) limit N->inf: 0.604371   deficit from lambda_*: 1.52e-02
+   N=  8 R=   16: 2Gamma=0.930539  Phi=1.835339  packing objective=0.588484  (109) limit N->inf: 0.604399   deficit from lambda_*: 1.59e-02
+   N= 16 R=   64: 2Gamma=0.965116  Phi=2.332336  packing objective=0.588308  (109) limit N->inf: 0.604400   deficit from lambda_*: 1.61e-02
+   N= 32 R=  256: 2Gamma=0.982539  Phi=2.831581  packing objective=0.588263  (109) limit N->inf: 0.604401   deficit from lambda_*: 1.61e-02
+   N= 64 R= 1024: 2Gamma=0.991267  Phi=3.331392  packing objective=0.588252  (109) limit N->inf: 0.604401   deficit from lambda_*: 1.61e-02
+   N=128 R= 4096: 2Gamma=nan  Phi=3.831345  packing objective=nan  (109) limit N->inf: 0.604401   deficit from lambda_*: nan

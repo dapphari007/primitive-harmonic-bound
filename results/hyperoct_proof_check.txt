@@ -1,0 +1,18 @@
+(1) Edmonds table vs wigner_6j on 1326 valid symbols: max |difference of squares| = 0
+(2) a1->b1: identity holds symbolically: True
+(2) a1->b2: identity holds symbolically: True
+(2) a2->b1: identity holds symbolically: True
+(2) a2->b2: identity holds symbolically: True
+(2) b1->a1: identity holds symbolically: True
+(2) b1->a2: identity holds symbolically: True
+(2) b2->a1: identity holds symbolically: True
+(2) b2->a2: identity holds symbolically: True
+ALL EIGHT IDENTITIES PROVED SYMBOLICALLY: True
+ALL EIGHT IDENTITIES PROVED SYMBOLICALLY: True
+(3) symbolic identities
+    sum of the eight coefficients = 1
+    reciprocity D_lambda p(a1->b1) = D_lambda' p(b1->a1): True
+    reciprocity D_lambda p(a1->b2) = D_lambda' p(b2->a1): True
+    reciprocity D_lambda p(a2->b1) = D_lambda' p(b1->a2): True
+    reciprocity D_lambda p(a2->b2) = D_lambda' p(b2->a2): True
+    reciprocity proved symbolically for all four edge types: True
