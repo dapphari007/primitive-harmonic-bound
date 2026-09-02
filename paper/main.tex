@@ -1,8 +1,9 @@
 \documentclass[11pt]{amsart}
-\usepackage[margin=1.1in]{geometry}
+\usepackage[margin=0.95in]{geometry}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{microtype}
 \hypersetup{colorlinks=true,linkcolor=blue!60!black,citecolor=blue!60!black,urlcolor=blue!60!black}
@@ -32,6 +33,8 @@
 \address{Independent researcher}
 \email{Arwin@kaaspro.com}
 \date{September 2026}
+
+\begin{document}
 
 \begin{abstract}
 The primitive-harmonic (moving-subspace) method of \cite{OAI2026} gave the first improvement since 1977 of the McEliece--Rodemich--Rumsey--Welch upper bound on the rate $R_2(\delta)$ of binary codes. Its binary certificates use representations of the hyperoctahedral group $B_n$ indexed by pairs of one-row Young diagrams. We build the analogue with pairs of two-row diagrams, compute its coordinate-transition coefficients in closed form (eight rational functions whose roots are Littlewood--Richardson admissibility boundaries), and prove them by Schur--Weyl duality and the recoupling of three $SU(2)$ spins with a spin-$\tfrac12$ entry. The resulting explicit exponent $\kappa_{2\mathrm{row}}(\delta)$ satisfies $R_2(\delta)\le\kappa_{2\mathrm{row}}(\delta)$ for all $\delta\in(0,\tfrac12)$, lies strictly below the whole-cube exponent of \cite{OAI2026} at every $\delta$, and therefore improves the bound of \cite[Thm.~1.1]{OAI2026} for every $\delta\ge\delta_1=0.2350$, where that bound reduces to the whole-cube exponent; at $\delta=0.3$ the bound moves from $0.248376$ to $0.248150$. At the middle level the new exponent reproduces the classical second MRRW bound exactly. We also describe the analogous extension inside a constant-weight layer to ambient shapes with any number of rows, give its coefficients in closed form as products of partial-hook differences (identified with Hecht's class of $U(N)$ Racah coefficients and verified exactly on every computed case), and show that the resulting gains form a convergent series of decreasing tiny terms. All computations are reproducible from the accompanying repository.
@@ -109,6 +112,7 @@ each constituent multiplicity-free, by the Pieri rule applied to the two blocks;
 \subsection{The closed forms}
 \begin{theorem}\label{thm:coeff}
 Let $\lambda=((a_1,a_2),(b_1,b_2))$ and $k$ be admissible and put $N=n(a_1+1-a_2)(b_1+1-b_2)$. Then
+\begin{small}
 \begin{equation}\label{eq:eight}
 \begin{aligned}
 p(a_1\to b_1)&=\frac{(a_1+1)(a_1+b_2-k)(a_2+b_1+1-k)}N, &
@@ -121,6 +125,7 @@ p(a_2\to b_2)&=\frac{a_2(a_2+b_1-k)(a_1+b_2+1-k)}N, &
 p(b_2\to a_2)&=\frac{b_2(a_1+b_2-k)(a_2+b_1+1-k)}N .
 \end{aligned}
 \end{equation}
+\end{small}
 A move whose target is not admissible has coefficient zero, and the formulas vanish there. Moreover the eight coefficients sum to one, and $D_\lambda p(\lambda\to\lambda')=D_{\lambda'}p(\lambda'\to\lambda)$ on every edge, with $D_{(\alpha,\beta)}=\binom n{|\beta|}f^\alpha f^\beta$.
 \end{theorem}
 

@@ -14,7 +14,7 @@
 - Licence: arXiv non-exclusive licence is the usual choice.
 - Title: A two-row representation graph improves the primitive-harmonic bound on binary codes
 - Abstract: copy from main.tex.
-- Comments field: "17 pages, 1 figure. Code and data at https://github.com/dapphari007/primitive-harmonic-bound"
+- Comments field: "9 pages, 1 figure. Code and data at https://github.com/dapphari007/primitive-harmonic-bound"
 - arXiv requires disclosure of significant generative-AI assistance; the Acknowledgements paragraph does this.
 
 ## 3. Journal / conference (after the arXiv posting)
