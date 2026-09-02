@@ -1,0 +1,8 @@
+{
+  "title": "A two-row representation graph improves the primitive-harmonic bound on binary codes: code, data and checks",
+  "upload_type": "software",
+  "creators": [{"name": "K, Harish"}],
+  "license": "MIT",
+  "keywords": ["binary codes", "MRRW bound", "Delsarte linear programming", "hyperoctahedral group", "representation graph", "6j symbols"],
+  "description": "Code, data and verification scripts accompanying the paper 'A two-row representation graph improves the primitive-harmonic bound on binary codes' (Harish K, 2026): the binary two-row representation graph for the hyperoctahedral group with proved closed-form coefficients and the exponent kappa_2row(delta), the constant-weight layer graphs with any number of ambient rows, and an independent numerical verification of the certificates of OpenAI's 'Ten advances in mathematics and theoretical computer science' (Chapter 2) against exact Delsarte linear programs."
+}
