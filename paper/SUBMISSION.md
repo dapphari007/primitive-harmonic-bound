@@ -1,11 +1,10 @@
 # Posting checklist
 
-## 1. Repository (do first: it fixes the date)
-1. Make the GitHub repository public (Settings > Danger zone > Change visibility), or run
-   `gh repo edit dapphari007/primitive-harmonic-bound --visibility public --accept-visibility-change-consequences`.
-2. Create a release `v1.0` (`gh release create v1.0 --title "v1.0" --notes "Version accompanying the arXiv preprint"`).
-3. Archive the release on Zenodo (zenodo.org > GitHub integration > enable the repository > the release is archived
-   automatically and receives a DOI). Put the DOI into README.md and CITATION.cff.
+## 1. Repository (DONE 2026-09-03)
+- Public at https://github.com/dapphari007/primitive-harmonic-bound, release v1.0 (with the PDF attached), MIT licence,
+  topics set, .zenodo.json present.
+- Remaining manual step: log in at zenodo.org with GitHub, enable the repository under GitHub integration, then create a
+  new release (v1.0.1) or re-trigger; Zenodo archives it and issues a DOI. Put the DOI into README.md and CITATION.cff.
 
 ## 2. arXiv
 - Primary category: math.CO (Combinatorics). Cross-list: cs.IT (Information Theory), math.RT (Representation Theory).
