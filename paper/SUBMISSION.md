@@ -3,8 +3,8 @@
 ## 1. Repository (DONE 2026-09-03)
 - Public at https://github.com/dapphari007/primitive-harmonic-bound, release v1.0 (with the PDF attached), MIT licence,
   topics set, .zenodo.json present.
-- Remaining manual step: log in at zenodo.org with GitHub, enable the repository under GitHub integration, then create a
-  new release (v1.0.1) or re-trigger; Zenodo archives it and issues a DOI. Put the DOI into README.md and CITATION.cff.
+- Zenodo DONE 2026-09-05: release v1.0.1 archived, version DOI 10.5281/zenodo.22363307, concept DOI 10.5281/zenodo.22363306
+  (https://zenodo.org/records/22363307). Both are in README.md and CITATION.cff.
 
 ## 2. arXiv
 - Primary category: math.CO (Combinatorics). Cross-list: cs.IT (Information Theory), math.RT (Representation Theory).
@@ -13,7 +13,7 @@
 - Licence: arXiv non-exclusive licence is the usual choice.
 - Title: A two-row representation graph improves the primitive-harmonic bound on binary codes
 - Abstract: copy from main.tex.
-- Comments field: "8 pages, 1 figure. Code and data at https://github.com/dapphari007/primitive-harmonic-bound"
+- Comments field: "8 pages, 1 figure. Code and data at https://github.com/dapphari007/primitive-harmonic-bound (Zenodo DOI 10.5281/zenodo.22363306)"
 - arXiv requires disclosure of significant generative-AI assistance; the Acknowledgements paragraph does this.
 
 ## 3. Journal / conference (after the arXiv posting)
@@ -36,7 +36,7 @@ this improves it there; at delta = 0.3 the bound moves from 0.248376 to 0.248150
 graph reproduces the second MRRW bound exactly.
 
 The preprint is at arXiv:XXXX.XXXXX and all code, data and checks are at
-https://github.com/dapphari007/primitive-harmonic-bound. I also re-derived your binary, constant-weight and spherical
+https://github.com/dapphari007/primitive-harmonic-bound (archived at https://doi.org/10.5281/zenodo.22363306). I also re-derived your binary, constant-weight and spherical
 certificates independently and tested them against exact Delsarte linear programs (no violations in about 2,800 cases);
 those checks are in the same repository.
 

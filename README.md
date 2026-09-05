@@ -1,6 +1,9 @@
 # A two-row representation graph improves the primitive-harmonic bound on binary codes
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22363306.svg)](https://doi.org/10.5281/zenodo.22363306)
+
 Code, data and checks for the paper of the same title (Harish K, 2026; `paper/main.tex`, `paper/main.pdf`).
+Archived on Zenodo: concept DOI [10.5281/zenodo.22363306](https://doi.org/10.5281/zenodo.22363306) (always the latest version); this release is [10.5281/zenodo.22363307](https://doi.org/10.5281/zenodo.22363307).
 
 **Main result.** The primitive-harmonic (moving-subspace) method of OpenAI's *Ten Advances in Mathematics and
 Theoretical Computer Science* (Aug 2026, Chapter 2) gave the first improvement since 1977 of the MRRW upper bound on

@@ -4,8 +4,9 @@ title: "A two-row representation graph improves the primitive-harmonic bound on 
 authors:
   - family-names: "K"
     given-names: "Harish"
-version: "1.0"
-date-released: "2026-09-03"
+version: "1.0.1"
+date-released: "2026-09-05"
+doi: 10.5281/zenodo.22363306
 repository-code: "https://github.com/dapphari007/primitive-harmonic-bound"
 license: MIT
 keywords:
