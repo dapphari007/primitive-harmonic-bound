@@ -14,13 +14,15 @@ Everything below needs your identity and your login, so it has to be done by you
 
 **b. Start the submission.** https://arxiv.org/submit
    - Licence: keep the default `arXiv.org perpetual, non-exclusive license`.
-   - Primary category: `math.CO` (Combinatorics). Cross-lists: `cs.IT` (Information Theory) and `math.RT`
-     (Representation Theory).
+   - Primary category: `Computer Science` > `Information Theory (cs.IT)`. Cross-lists: `math.CO` (Combinatorics) and
+     `math.RT` (Representation Theory). cs.IT is aliased with math.IT, so the paper appears in the mathematics listing
+     too. Choosing a Mathematics primary instead would mean going back to the registration form and adding the
+     Mathematics group; it is not worth it, cs.IT is the natural home for a bound on binary codes.
 
-**c. Get the endorsement code.** A new account without an academic email is not yet allowed to post to math.CO, so at
+**c. Get the endorsement code.** A new account without an academic email is not yet allowed to post to cs.IT, so at
    this point arXiv shows a six-character endorsement code and a link of the form
    `https://arxiv.org/auth/endorse?x=CODE`. Copy them, then send **Email 1** in `EMAILS.md` to one researcher who posts
-   to math.CO or cs.IT. When they enter the code, the block disappears. Endorsement is not a review and commits the
+   to cs.IT or math.CO. When they enter the code, the block disappears. Endorsement is not a review and commits the
    endorser to nothing.
 
 **d. Upload two files** (as separate files, not a folder or an archive):

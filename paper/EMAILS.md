@@ -6,17 +6,19 @@ Two emails, in the order you send them. Replace the CAPITALISED placeholders. No
 
 ## Email 1 — endorsement request (send first, after arXiv gives you a code)
 
-You only get the endorsement code after you register on arXiv and begin a submission to math.CO. Send this to a
-researcher who posts regularly to math.CO (combinatorics) or cs.IT (information theory): a professor in your city's
+Primary category is cs.IT (Information Theory), with math.CO as a cross-list.
+
+You only get the endorsement code after you register on arXiv and begin a submission. Send this to a
+researcher who posts regularly to cs.IT (information theory) or math.CO (combinatorics): a professor in your city's
 university mathematics or electrical-engineering department, a coding-theory author whose papers you have read, or a
 former teacher. One is enough. Endorsement means only "this person's submission looks like genuine research"; it is
 not a peer review and carries no responsibility for the contents.
 
-**Subject:** arXiv endorsement request for math.CO — improvement of the MRRW bound on binary codes
+**Subject:** arXiv endorsement request for cs.IT — improvement of the MRRW bound on binary codes
 
 Dear Professor SURNAME,
 
-I am an independent researcher and I would like to post my first preprint to arXiv, in math.CO. New submitters need an
+I am an independent researcher and I would like to post my first preprint to arXiv, in cs.IT. New submitters need an
 endorsement, and arXiv suggests asking someone who publishes in the same area, which is why I am writing to you.
 
 The paper improves the best known upper bound on the rate of binary error-correcting codes. In August 2026 OpenAI's
