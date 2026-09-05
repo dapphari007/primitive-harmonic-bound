@@ -1,47 +1,69 @@
 # Posting checklist
 
-## 1. Repository (DONE 2026-09-03)
-- Public at https://github.com/dapphari007/primitive-harmonic-bound, release v1.0 (with the PDF attached), MIT licence,
-  topics set, .zenodo.json present.
-- Zenodo DONE 2026-09-05: release v1.0.1 archived, version DOI 10.5281/zenodo.22363307, concept DOI 10.5281/zenodo.22363306
-  (https://zenodo.org/records/22363307). Both are in README.md and CITATION.cff.
+## 1. Repository and archive — DONE
+- Public: https://github.com/dapphari007/primitive-harmonic-bound (MIT licence, topics set).
+- Zenodo, 2026-09-05: version DOI 10.5281/zenodo.22363307, **concept DOI 10.5281/zenodo.22363306** (cite this one; it
+  always resolves to the newest version). Both are in README.md and CITATION.cff. Every future GitHub release is
+  archived automatically under the same concept DOI.
 
-## 2. arXiv
-- Primary category: math.CO (Combinatorics). Cross-list: cs.IT (Information Theory), math.RT (Representation Theory).
-- First submission needs an endorsement for math.CO from an existing arXiv author in that category.
-- Upload `paper/main.tex` and `paper/fig5_two_row.png` (single-file submission with one figure; arXiv compiles it).
-- Licence: arXiv non-exclusive licence is the usual choice.
-- Title: A two-row representation graph improves the primitive-harmonic bound on binary codes
-- Abstract: copy from main.tex.
-- Comments field: "8 pages, 1 figure. Code and data at https://github.com/dapphari007/primitive-harmonic-bound (Zenodo DOI 10.5281/zenodo.22363306)"
-- arXiv requires disclosure of significant generative-AI assistance; the Acknowledgements paragraph does this.
+## 2. arXiv — your steps, in order
 
-## 3. Journal / conference (after the arXiv posting)
-- IEEE Transactions on Information Theory (journal, no submission fee), or Designs, Codes and Cryptography.
-- ISIT (conference; deadline usually January) for a short version of Sections 3-4.
+Everything below needs your identity and your login, so it has to be done by you. The files are ready.
 
-## 4. Email to the authors of the OpenAI paper
-Send after the arXiv identifier exists. Suggested text:
+**a. Register.** https://arxiv.org/user/register — real name `Harish K`, affiliation `Independent researcher`.
 
-Subject: Improvement of Theorem 1.1 of "Ten advances" (binary codes) for delta >= 0.235
+**b. Start the submission.** https://arxiv.org/submit
+   - Licence: keep the default `arXiv.org perpetual, non-exclusive license`.
+   - Primary category: `math.CO` (Combinatorics). Cross-lists: `cs.IT` (Information Theory) and `math.RT`
+     (Representation Theory).
 
-Dear authors,
+**c. Get the endorsement code.** A new account without an academic email is not yet allowed to post to math.CO, so at
+   this point arXiv shows a six-character endorsement code and a link of the form
+   `https://arxiv.org/auth/endorse?x=CODE`. Copy them, then send **Email 1** in `EMAILS.md` to one researcher who posts
+   to math.CO or cs.IT. When they enter the code, the block disappears. Endorsement is not a review and commits the
+   endorser to nothing.
 
-I have built the binary analogue of the multi-row spherical hierarchy of Chapter 2 of your paper "Ten advances in
-mathematics and theoretical computer science": a representation graph for the hyperoctahedral group whose vertices are
-pairs of two-row Young diagrams. Its coordinate-transition coefficients have closed forms (eight rational functions,
-proved via Schur-Weyl duality and 6j-symbols with a spin-1/2 entry), and the resulting exponent kappa_2row lies strictly
-below your whole-cube exponent kappa_H at every delta. Since your Theorem 1.1 reduces to kappa_H for delta >= 0.2350,
-this improves it there; at delta = 0.3 the bound moves from 0.248376 to 0.248150. At the middle level the two-row
-graph reproduces the second MRRW bound exactly.
+**d. Upload two files** (as separate files, not a folder or an archive):
+   - `paper/main.tex`
+   - `paper/fig5_two_row.png`
+   arXiv compiles them itself. Check the generated PDF preview: 9 pages, one figure on page 5 or 6.
 
-The preprint is at arXiv:XXXX.XXXXX and all code, data and checks are at
-https://github.com/dapphari007/primitive-harmonic-bound (archived at https://doi.org/10.5281/zenodo.22363306). I also re-derived your binary, constant-weight and spherical
-certificates independently and tested them against exact Delsarte linear programs (no violations in about 2,800 cases);
-those checks are in the same repository.
+**e. Metadata.**
+   - Title: `A two-row representation graph improves the primitive-harmonic bound on binary codes`
+   - Authors: `Harish K`
+   - Comments: `9 pages, 1 figure. Code, data and machine-checked identities: https://github.com/dapphari007/primitive-harmonic-bound (DOI 10.5281/zenodo.22363306)`
+   - Abstract: paste the plain-text version at the bottom of this file (the LaTeX abstract contains \cite commands,
+     which the metadata field does not accept).
+   - MSC classes (optional): `94B65, 05E10, 20C30`. ACM class (optional): `E.4`.
 
-I would be grateful for any comments, and happy to coordinate if you plan to extend your Lean formalisation to this
-construction.
+**f. Submit.** Submissions made before 14:00 US Eastern on a working day are normally announced the following evening.
+   You get an identifier of the form `arXiv:2609.XXXXX`.
 
-With best regards,
-Harish K
+**g. After it is live:** put the arXiv identifier into README.md and CITATION.cff, and send **Email 2** in `EMAILS.md`.
+
+## 3. Journal or conference (after arXiv, optional)
+- IEEE Transactions on Information Theory, or Designs, Codes and Cryptography. Neither charges a submission fee.
+- ISIT for a short version of Sections 3 and 4 (deadline usually in January).
+
+## 4. Before you post — worth doing
+Read Section 3.3 of the PDF until you can explain the three steps in your own words, and if you can, have one
+mathematician read that section. The Zenodo DOI already fixes the date, so a few days spent on this cost you nothing.
+
+---
+
+## Plain-text abstract for the arXiv metadata field
+
+The primitive-harmonic (moving-subspace) method introduced in OpenAI's "Ten advances in mathematics and theoretical
+computer science" (2026) gave the first improvement since 1977 of the McEliece-Rodemich-Rumsey-Welch upper bound on the
+rate R_2(delta) of binary codes. Its binary certificates use representations of the hyperoctahedral group B_n indexed by
+pairs of one-row Young diagrams. We build the analogue with pairs of two-row diagrams, compute its coordinate-transition
+coefficients in closed form (eight rational functions whose roots are the Littlewood-Richardson admissibility
+boundaries), and prove them by Schur-Weyl duality together with the recoupling of three SU(2) spins with a spin-1/2
+entry. The resulting explicit exponent kappa_2row(delta) satisfies R_2(delta) <= kappa_2row(delta) for all delta in
+(0,1/2) and lies strictly below the whole-cube exponent of that paper at every delta; since the paper's Theorem 1.1
+reduces to the whole-cube exponent for delta >= 0.2350, the bound is improved there. At delta = 0.3 it moves from
+0.248376 to 0.248150. At the middle level the new exponent reproduces the classical second MRRW bound exactly. We also
+describe the analogous extension inside a constant-weight layer to ambient shapes with any number of rows, give its
+coefficients in closed form as products of partial-hook differences (identified with Hecht's class of U(N) Racah
+coefficients and verified exactly on every computed case), and show that the gains from additional rows form a
+convergent series of rapidly decreasing terms. All computations are reproducible from the accompanying repository.
